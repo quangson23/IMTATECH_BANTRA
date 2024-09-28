@@ -26,12 +26,18 @@ return new class extends Migration
             $table->string('product_note')->nullable();
             $table->string('image');
             $table->boolean('tag')->default(true);
-            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('category_id')->nullable();
             // Tạo khóa ngoại
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            // $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('set null');
 
-            $table->unsignedBigInteger('promotions_id');
-            
+
+
+
+            $table->unsignedBigInteger('promotions_id')->nullable();
+            // $table->foreign('promotions_id')->references('id')->on('promotions')->onDelete('set null');
+
+
 
 
             $table->timestamps();

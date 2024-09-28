@@ -31,7 +31,7 @@
                 <h4 class="card-header">Danh sách khuyến mại</h4>
                 {{-- body --}}
                 <div class="card-body">
-                    <a href="#" class="btn btn-success mb-3">Tạo mã mới</a>
+                    <a href="{{ route('promotion.create') }}" class="btn btn-success mb-3">Tạo khuyến mại</a>
                     <form action="#" method="POST" id="bulk-delete-form">
                         @csrf
                         @method('DELETE')
@@ -52,12 +52,8 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($promotions as $index => $item)
-                                        @php
-                                            $currentDate = now(); // Ngày hiện tại
-                                            $startDate = \Carbon\Carbon::parse($item->start_date);
-                                            $endDate = \Carbon\Carbon::parse($item->end_date);
-                                            $isActive = $currentDate->between($startDate, $endDate);
-                                        @endphp
+
+
                                         <tr>
                                             <td><input type="checkbox" name="coupons[]" value="{{ $item->id }}"></td>
                                             <td>{{ $index + 1 }}</td>
@@ -91,15 +87,27 @@
 
 
                                             <td>
-                                                <span
-                                                    class="{{ $isActive ? 'badge badge-active custom-badge' : 'badge badge-expired custom-badge' }}">
-                                                    {{ $isActive ? 'Còn hạn' : 'Hết hạn' }}
-                                                </span>
+                                                @php
+                                                    $currentDate = now(); // Ngày hiện tại
+                                                    $startDate = \Carbon\Carbon::parse($item->start_date);
+                                                    $endDate = \Carbon\Carbon::parse($item->end_date);
+
+                                                    // Kiểm tra xem khuyến mại có còn hiệu lực không
+                                                    $isActive = $currentDate->between($startDate, $endDate) || $currentDate->lessThan($endDate);
+
+                                                    // Tính số ngày còn lại nếu khuyến mại còn hiệu lực
+                                                    $timeRemaining = $isActive ? $endDate->diffInDays($currentDate) : 0;
+                                                @endphp
+                                                <span class="{{ $isActive ? 'badge bg-success text-white' : 'badge bg-danger text-white' }}"
+                                                style="display: inline-block; width: 90px; text-align: center;">
+                                              {{ $isActive ? 'Còn hạn' : 'Hết hạn' }}
+                                          </span>
                                             </td>
 
+
                                             <td>
-                                                <img src="{{ asset('storage/' . $item->image_path) }}" width="100"
-                                                    height="100" alt="">
+                                                <img src="{{ asset('storage/' . $item->image_path) }}" width="70"
+                                                    height="70" alt="">
                                             </td>
                                             <td style="display: flex; gap: 10px; align-items: center; height: 100px;">
                                                 <a href="#">
@@ -107,12 +115,13 @@
                                                         <i class="fas fa-info-circle"></i> <!-- Biểu tượng thông tin -->
                                                     </button>
                                                 </a>
-                                                <a href="#">
+                                                <a href="{{ route('promotion.edit', $item->id) }}">
                                                     <button type="button" class="btn btn-warning">
                                                         <i class="fas fa-edit"></i> <!-- Biểu tượng chỉnh sửa -->
                                                     </button>
                                                 </a>
-                                                <form action="#" method="POST" style="display:inline;">
+                                                <form action="{{ route('promotion.destroy', $item->id) }}" method="POST"
+                                                    style="display:inline;">
                                                     @method('DELETE')
                                                     @csrf
                                                     <button type="submit"

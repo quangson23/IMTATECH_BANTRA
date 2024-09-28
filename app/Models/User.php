@@ -24,7 +24,9 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'phone',
         'email',
+        'address',
         'password',
         'role',
     ];
@@ -49,6 +51,11 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    
+
+    public function order(){
+        return $this->hasMany(Order::class);
+    }
 
 
     public function getAll()

@@ -51,7 +51,7 @@
                 <div class="footer-column col-xl-3 col-lg-12 col-md-6 col-sm-12">
                     <div class="footer-widget about-widget">
                         <a href="/">
-                            <img src="images/druma.png" alt="Meato" title="Meato" style="width: 300px; height: auto;">
+                            <img src="images/logotra.png" alt="Meato" title="Meato" style="width: 300px; height: auto;">
                         </a>
                         <div class="text">Thời trang - phong cách - cuộc sống.</div>
                         <a href="page-about.html" class="theme-btn btn-style-one hvr-light small"><span
@@ -78,7 +78,7 @@
                         <div class="widget-content">
                             <div class="outer clearfix">
                                 <figure class="image">
-                                    <a href="#"><img src="images/tt1.jpg"
+                                    <a href="#"><img src="images/tt1.png"
                                             alt /></a>
                                 </figure>
                                 <figure class="image">
@@ -86,21 +86,10 @@
                                         alt /></a>
                                 </figure>
                                 <figure class="image">
-                                    <a href="#"><img src="images/tt2.jpg"
+                                    <a href="#"><img src="images/tt3.jpg"
                                         alt /></a>
                                 </figure>
-                                <figure class="image">
-                                    <a href="#"><img src="images/tt4.jpg"
-                                        alt /></a>
-                                </figure>
-                                <figure class="image">
-                                    <a href="#"><img src="images/tt1.jpg"
-                                        alt /></a>
-                                </figure>
-                                <figure class="image">
-                                    <a href="#"><img src="images/tt2.jpg"
-                                        alt /></a>
-                                </figure>
+                               
                             </div>
                         </div>
                     </div>
@@ -160,42 +149,64 @@
 
 <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
 <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-<script src="js/jquery.js"></script>
-<script src="js/popper.min.js"></script>
+<script src="{{asset('js/jquery.js')}}"></script>
+<script src="{{asset('js/popper.min.js')}}"></script>
 
-<script src="plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
-<script src="plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
-<script src="plugins/revolution/js/extensions/revolution.extension.actions.min.js"></script>
-<script src="plugins/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-<script src="plugins/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
-<script src="plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-<script src="plugins/revolution/js/extensions/revolution.extension.migration.min.js"></script>
-<script src="plugins/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-<script src="plugins/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
-<script src="plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-<script src="plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
-<script src="js/main-slider-script.js"></script>
+<script src="{{asset('plugins/revolution/js/jquery.themepunch.revolution.min.js')}}"></script>
+<script src="{{asset('plugins/revolution/js/jquery.themepunch.tools.min.js')}}"></script>
+<script src="{{asset('plugins/revolution/js/extensions/revolution.extension.actions.min.js')}}"></script>
+<script src="{{asset('plugins/revolution/js/extensions/revolution.extension.carousel.min.js')}}"></script>
+<script src="{{asset('plugins/revolution/js/extensions/revolution.extension.kenburn.min.js')}}"></script>
+<script src="{{asset('plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js')}}"></script>
+<script src="{{asset('plugins/revolution/js/extensions/revolution.extension.migration.min.js')}}"></script>
+<script src="{{asset('plugins/revolution/js/extensions/revolution.extension.navigation.min.js')}}"></script>
+<script src="{{asset('plugins/revolution/js/extensions/revolution.extension.parallax.min.js')}}"></script>
+<script src="{{asset('plugins/revolution/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
+<script src="{{asset('plugins/revolution/js/extensions/revolution.extension.video.min.js')}}"></script>
+<script src="{{asset('js/main-slider-script.js')}}"></script>
 
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.fancybox.js"></script>
-<script src="js/jquery-ui.js"></script>
-<script src="js/wow.js"></script>
-<script src="js/appear.js"></script>
-<script src="js/select2.min.js"></script>
-<script src="js/swiper.min.js"></script>
-<script src="js/owl.js"></script>
-
-
-
-<script src="js/popper.min.js"></script>
-<script src="js/jquery.countdown.js"></script>
-<script src="js/mixitup.js"></script>
+<script src="{{asset('js/bootstrap.min.js')}}"></script>
+<script src="{{asset('js/jquery.fancybox.js')}}"></script>
+<script src="{{asset('js/jquery-ui.js')}}"></script>
+<script src="{{asset('js/wow.js')}}"></script>
+<script src="{{asset('js/appear.js')}}"></script>
+<script src="{{asset('js/select2.min.js')}}"></script>
+<script src="{{asset('js/swiper.min.js')}}"></script>
+<script src="{{asset('js/owl.js')}}"></script>
 
 
+<script src="{{asset('js/popper.min.js')}}"></script>
+<script src="{{asset('js/jquery.countdown.js')}}"></script>
+<script src="{{asset('js/mixitup.js')}}"></script>
 
 
-<script src="js/bxslider.js"></script>
-<script src="js/script.js"></script>
+<script src="{{asset('js/bxslider.js')}}"></script>
+<script src="{{asset('js/script.js')}}"></script>
 
-<script src="js/jquery.validate.min.js"></script>
-<script src="js/jquery.form.min.js"></script>
+<script src="{{asset('js/jquery.validate.min.js')}}"></script>
+<script src="{{asset('js/jquery.form.min.js')}}"></script>
+<script>
+	(function($) {
+		$("#contact_form").validate({
+			submitHandler: function(form) {
+				var form_btn = $(form).find('button[type="submit"]');
+				var form_result_div = '#form-result';
+				$(form_result_div).remove();
+				form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
+				var form_btn_old_msg = form_btn.html();
+				form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
+				$(form).ajaxSubmit({
+					dataType:  'json',
+					success: function(data) {
+						if( data.status == 'true' ) {
+							$(form).find('.form-control').val('');
+						}
+						form_btn.prop('disabled', false).html(form_btn_old_msg);
+						$(form_result_div).html(data.message).fadeIn('slow');
+						setTimeout(function(){ $(form_result_div).fadeOut('slow') }, 6000);
+					}
+				});
+			}
+		});
+	})(jQuery);
+</script>

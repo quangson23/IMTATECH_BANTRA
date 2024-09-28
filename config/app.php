@@ -14,6 +14,11 @@ return [
     | any other location as required by the application or its packages.
     |
     */
+    'pdf' => [
+    'font_path' => public_path('fonts/'),
+    'font_cache' => storage_path('fonts/'),
+],
+
 
     'name' => env('APP_NAME', 'Laravel'),
 
@@ -159,6 +164,7 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
+        Barryvdh\DomPDF\ServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,

@@ -36,7 +36,7 @@
                                 <thead>
                                     <th><input type="checkbox" id="select-all"></th>
                                     <th>#</th>
-                                    <th>Tên</th>
+                                    <th>Tên mã giảm giá</th>
                                     <th>Loại giảm giá</th>
                                     <th>Số lượng</th>
                                     <th>Mã code</th>
@@ -48,12 +48,7 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($coupons as $index => $item)
-                                        @php
-                                            $currentDate = now(); // Ngày hiện tại
-                                            $startDate = \Carbon\Carbon::parse($item->start_date);
-                                            $endDate = \Carbon\Carbon::parse($item->end_date);
-                                            $isActive = $currentDate->between($startDate, $endDate);
-                                        @endphp
+
                                         <tr>
                                             <td><input type="checkbox" name="coupons[]" value="{{ $item->id }}"></td>
                                             <td>{{ $index + 1 }}</td>
@@ -80,9 +75,21 @@
 
 
                                             <td>
-                                                <span class="{{ $isActive ? 'badge badge-active custom-badge' : 'badge badge-expired custom-badge' }}">
-                                                    {{ $isActive ? 'Còn hạn' : 'Hết hạn' }}
-                                                </span>
+                                                @php
+                                                    $currentDate = now(); // Ngày hiện tại
+                                                    $startDate = \Carbon\Carbon::parse($item->start_date);
+                                                    $endDate = \Carbon\Carbon::parse($item->end_date);
+
+                                                    // Kiểm tra xem khuyến mại có còn hiệu lực không
+                                                    $isActive = $currentDate->between($startDate, $endDate) || $currentDate->lessThan($endDate);
+
+                                                    // Tính số ngày còn lại nếu khuyến mại còn hiệu lực
+                                                    $timeRemaining = $isActive ? $endDate->diffInDays($currentDate) : 0;
+                                                @endphp
+                                                <span class="{{ $isActive ? 'badge bg-success text-white' : 'badge bg-danger text-white' }}"
+                                                style="display: inline-block; width: 90px; text-align: center;">
+                                              {{ $isActive ? 'Còn hạn' : 'Hết hạn' }}
+                                          </span>
                                             </td>
                                             <td style="display: flex; gap: 10px; align-items: center; height: 100px;">
                                                 <a href="#">

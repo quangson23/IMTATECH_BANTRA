@@ -1,3 +1,22 @@
+
+<style>
+    .xedo {
+        position: absolute;
+        top: -10px; /* Adjust as needed */
+        right: -10px; /* Adjust as needed */
+        background-color: red; /* Background color for the badge */
+        color: white; /* Text color */
+        border-radius: 50%; /* Makes it a circle */
+        width: 20px; /* Adjust size as needed */
+        height: 20px; /* Adjust size as needed */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px; /* Font size */
+    }
+</style>
+
+
 <div class="page-wrapper">
 
     <div class="preloader"></div>
@@ -15,8 +34,13 @@
                     <li><i class="fa fa-phone-volume"></i> <a href="tel:+92(8800)87890">0981679804</a></li>
                 </ul>
             </div>
+
+
+
             <div class="top-right">
+
                 <ul class="social-icon-one">
+
                     <li>
                         <a href="#"><span class="fab fa-facebook-square"></span></a>
                     </li>
@@ -29,6 +53,9 @@
                     <li>
                         <a href="#"><span class="fab fa-instagram"></span></a>
                     </li>
+                    <li class="greeting-message mt-1 text-white">
+                        Xin chào, {{ Auth::user()->name }} <!-- Replace with user's name -->
+                    </li>
                 </ul>
             </div>
         </div>
@@ -39,7 +66,7 @@
             <div class="main-box">
                 <div class="logo-box">
                     <a href="/">
-                        <img src="images/druma.png" alt="Meato" title="Meato" style="width: 130px; height: auto;">
+                        <img src="{{asset('images/logotra.png')}}" alt="Meato" title="Meato" style="width: 130px; height: auto;">
                     </a>
                 </div>
 
@@ -49,38 +76,10 @@
 
 
                             </li>
-                            <li class="dropdown">
-                                <a href="#">Tài khoản</a>
-                                <ul>
-                                    <li><a href="page-about.html">About</a></li>
-                                    <li class="dropdown">
-                                        <a href="#">Services</a>
-                                        <ul>
-                                            <li><a href="page-services.html">Services List</a></li>
-                                            <li><a href="page-service-details.html">Service Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="#">Team</a>
-                                        <ul>
-                                            <li><a href="page-team.html">Team List</a></li>
-                                            <li><a href="page-team-details.html">Team Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="page-testimonial.html">Testimonial</a></li>
-                                    <li><a href="page-faq.html">FAQ</a></li>
-                                    <li><a href="page-404.html">Page 404</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
+
+                            <li >
                                 <a href="/shop">Cửa hàng</a>
-                                <ul>
-                                    <li><a href="shop-products.html">Products</a></li>
-                                    <li><a href="shop-products-sidebar.html">Products with Sidebar</a></li>
-                                    <li><a href="shop-product-details.html">Product Details</a></li>
-                                    <li><a href="shop-cart.html">Cart</a></li>
-                                    <li><a href="shop-checkout.html">Checkout</a></li>
-                                </ul>
+
                             </li>
 
                             <li class="dropdown">
@@ -97,14 +96,21 @@
                             </li>
 
                             <li class="dropdown">
-                                <a href="#">Tin tức</a>
-                                <ul>
-                                    <li><a href="news-grid.html">News Grid</a></li>
-                                    <li><a href="news-details.html">News Details</a></li>
-                                </ul>
+                                <a href="/khoahoctra">Khóa học trà</a>
+                                {{-- <ul>
+                                @foreach ($promotions as $index => $item)
+                                    <li><a href="page-about.html">{{ $item->promotions_name }}</a></li>
+                                @endforeach
+
+                                </ul> --}}
+                            </li>
+
+                            <li >
+                                <a href="/blog">Tin tức</a>
+
                             </li>
                             <li><a href="/contac">Liên hệ</a></li>
-                            <li><a href="page-contact.html">Về Sclothes</a></li>
+                            <li><a href="/about">Giới thiệu</a></li>
 
 
 
@@ -115,8 +121,12 @@
                         <button class="ui-btn ui-btn search-btn">
                             <span class="icon lnr lnr-icon-search"></span>
                         </button>
-                        <a href="/cart" class="ui-btn"><i class="lnr-icon-shopping-cart"></i></a>
-                        <a href="{{asset('admin')}}" class="ui-btn"><i class="lnr-icon-user"></i></a>
+                        <a href="{{ route('cart.list') }}" class="ui-btn position-relative">
+                            <i class="lnr-icon-shopping-cart"></i>
+                            <span class="xedo badge-circle">{{session ('cart') ? count(session('cart')) : '0'}}</span>
+                        </a>
+
+                        <a href="{{route('ordersc.index')}}" class="ui-btn"><i class="lnr-icon-user"></i></a>
                         <a href="page-contact.html" class="theme-btn btn-style-one alternate"><span
                                 class="btn-title">Liên hệ ngay</span></a>
 
@@ -133,7 +143,7 @@
             <nav class="menu-box">
                 <div class="upper-box">
                     <div class="nav-logo">
-                        <a href="index-2.html"><img src="images/logo-2.png" alt title="Meato" /></a>
+                        <a href="index-2.html"><img src="{{asset('images/logotra.png')}}" alt title="Meato" /></a>
                     </div>
                     <div class="close-btn"><i class="icon fa fa-times"></i></div>
                 </div>
@@ -206,7 +216,7 @@
                 <div class="inner-container">
 
                     <a href="/">
-                        <img src="images/druma.png" alt="Meato" title="Meato" style="width: 130px; height: auto;">
+                        <img src="{{asset('images/logotra.png')}}" alt="Meato" title="Meato" style="width: 130px; height: auto;">
                     </a>
 
                     <div class="nav-outer">

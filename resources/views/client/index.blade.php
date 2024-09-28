@@ -4,10 +4,15 @@
         <div class="rev_slider_wrapper fullwidthbanner-container" id="rev_slider_one_wrapper" data-source="gallery">
             <div class="rev_slider fullwidthabanner" id="rev_slider_one" data-version="5.4.1">
                 <ul>
+                    @foreach ($banners as $banner)
+
+
+
+
 
                     <li data-index="rs-1" data-transition="zoomout">
 
-                        <img src="images/main-slider/slide2.jpg" alt class="rev-slidebg" />
+                        <img src="{{ Storage::url($banner->image) }}" alt class="rev-slidebg" />
                         <div class="tp-caption tp-shape tp-shapewrapper tp-resizeme ipad-hidden rs-parallaxlevel-1"
                             data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" data-paddingright="[0,0,0,0]"
                             data-paddingtop="[0,0,0,0]" data-responsive_offset="on" data-type="shape" data-height="auto"
@@ -53,63 +58,11 @@
                             data-voffset="['100','120','120','120']" data-x="['left','left','left','left']"
                             data-y="['middle','middle','middle','middle']" data-textalign="['top','top','top','top']"
                             data-frames="[{&quot;delay&quot;:1000,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]">
-                            <a href="page-about.html" class="theme-btn btn-style-one hvr-light"><span class="btn-title">Tìm
+                            <a href="{{ $banner->image_url }}" class="theme-btn btn-style-one hvr-light"><span class="btn-title">Tìm
                                     hiểu thêm</span></a>
                         </div>
                     </li>
-
-                    <li data-index="rs-2" data-transition="zoomout">
-
-                        <img src="images/main-slider/slide1.webp" alt class="rev-slidebg" />
-                        <div class="tp-caption tp-shape tp-shapewrapper tp-resizeme ipad-hidden rs-parallaxlevel-1"
-                            data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" data-paddingright="[0,0,0,0]"
-                            data-paddingtop="[0,0,0,0]" data-responsive_offset="on" data-type="shape" data-height="auto"
-                            data-whitespace="nowrap" data-width="none" data-hoffset="['110','110','110','110']"
-                            data-voffset="['110','90','90','90']" data-x="['right','right','right','right']"
-                            data-y="['bottom','bottom','bottom','bottom']"
-                            data-frames="[{&quot;from&quot;:&quot;x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;speed&quot;:1500,&quot;to&quot;:&quot;o:1;&quot;,&quot;delay&quot;:1000,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1000,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;mask&quot;:&quot;x:0;y:0;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]">
-
-                        </div>
-                        <div class="tp-caption tp-resizeme rs-parallaxlevel-1 ipad-hidden" data-paddingbottom="[0,0,0,0]"
-                            data-paddingleft="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]"
-                            data-responsive_offset="on" data-type="shape" data-height="none" data-whitespace="nowrap"
-                            data-width="none" data-hoffset="['0','0','0','0']" data-voffset="['110','90','90','90']"
-                            data-x="['right','right','right','right']" data-y="['bottom','bottom','bottom','bottom']"
-                            data-frames="[{&quot;from&quot;:&quot;y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;speed&quot;:1500,&quot;to&quot;:&quot;o:1;&quot;,&quot;delay&quot;:1500,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:3000,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;mask&quot;:&quot;x:0;y:0;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]">
-
-                        </div>
-                        <div class="tp-caption" data-paddingbottom="[0,0,0,0]" data-paddingleft="[15,15,15,15]"
-                            data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on"
-                            data-type="text" data-height="none" data-width="['750','750','750','650']"
-                            data-whitespace="normal" data-hoffset="['0','0','0','0']"
-                            data-voffset="['-195','-160','-160','-140']" data-x="['left','left','left','left']"
-                            data-y="['middle','middle','middle','middle']" data-textalign="['top','top','top','top']"
-                            data-frames="[{&quot;delay&quot;:1000,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]">
-                            <span class="title">Phong cách & Chất lượng</span>
-                        </div>
-                        <div class="tp-caption" data-paddingbottom="[0,0,0,0]" data-paddingleft="[15,15,15,15]"
-                            data-paddingright="[15,15,15,15]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on"
-                            data-type="text" data-height="none" data-width="['750','750','750','650']"
-                            data-whitespace="normal" data-hoffset="['0','0','0','0']"
-                            data-voffset="['-70','-40','-40','-30']" data-x="['left','left','left','left']"
-                            data-y="['middle','middle','middle','middle']" data-textalign="['top','top','top','top']"
-                            data-frames="[{&quot;delay&quot;:1000,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]">
-                            <h2>
-                                Chính hãng <br />
-                                đến từ Sclothes
-                            </h2>
-                        </div>
-                        <div class="tp-caption" data-paddingbottom="[0,0,0,0]" data-paddingleft="[15,15,15,15]"
-                            data-paddingright="[15,15,15,15]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on"
-                            data-type="text" data-height="none" data-width="['700','750','700','450']"
-                            data-whitespace="normal" data-hoffset="['0','0','0','0']"
-                            data-voffset="['100','120','120','120']" data-x="['left','left','left','left']"
-                            data-y="['middle','middle','middle','middle']" data-textalign="['top','top','top','top']"
-                            data-frames="[{&quot;delay&quot;:1000,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]">
-                            <a href="page-about.html" class="theme-btn btn-style-one hvr-light"><span
-                                    class="btn-title">Tìm hiểu thêm</span></a>
-                        </div>
-                    </li>
+                    @endforeach
                 </ul>
             </div>
         </div>
@@ -128,7 +81,10 @@
     <br>
     <section class="about-section pt-0">
         <div class="anim-icons">
-            <div class="float-image wow fadeInRight"><img src="images/resource/float-img-1.png" alt /></div>
+            <div class="float-image wow fadeInRight">
+                <img src="images/resource/tra.png" alt="" style="width: 570px;" />
+            </div>
+
             <span class="icon icon-dots-1 bounce-x"></span>
             <span class="icon icon-dotted-map zoom-one"></span>
         </div>
@@ -137,14 +93,9 @@
                 <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
                     <div class="inner-column">
                         <div class="sec-title">
-                            <span class="sub-title">Thương hiệu thời trang Sclothes</span>
-                            <h2>Điểm đến lý tưởng của thời trang phong cách nhật</h2>
-                            <div class="text"> "SClothes là điểm đến lý tưởng cho những người yêu thích phong cách Nhật.
-                                Với một bộ sưu tập đa dạng gồm các loại sản phẩm từ trang phục, phụ kiện đến đồ dùng gia
-                                đình, chúng tôi mang đến những món đồ thời trang chất lượng cao, tinh tế và đậm chất Nhật
-                                Bản. Với sứ mệnh lan tỏa vẻ đẹp của văn hóa Nhật, SClothes cam kết đem đến trải nghiệm mua
-                                sắm trực tuyến hấp dẫn và tiện lợi cho khách hàng. Hãy khám phá ngay hôm nay để tìm kiếm
-                                những sản phẩm ưa thích của bạn!" .</div>
+                            <span class="sub-title">Giới thiệu</span>
+                            <h2>Trà ngon - Tận hưởng từng khoảnh khắc</h2>
+                            <div class="text"> "Chào mừng bạn đến với SabujCha, nơi mang đến những tách trà tinh tế, đậm đà hương vị thiên nhiên. Chúng tôi tự hào cung cấp đa dạng các loại trà chất lượng cao, từ trà xanh thanh mát, trà đen truyền thống đến các dòng trà thảo mộc thơm ngon, tốt cho sức khỏe. Với cam kết về nguồn gốc tự nhiên và quy trình sản xuất an toàn, [Tên shop] không chỉ mang lại hương vị tuyệt vời mà còn giúp bạn thư giãn và chăm sóc sức khỏe mỗi ngày. Trải nghiệm ngay hôm nay để tận hưởng từng khoảnh khắc trà!</div>
                         </div>
                         <div class="content-box">
                             <div class="about-block">
@@ -153,7 +104,7 @@
                                 </i>
                                 {{-- sdfggggggggggggggggggggg --}}
                                 <h4 class="title">Hỗ trợ khách hàng</h4>
-                                <p class="text">Sclothes luôn nhiệt tình tư vấn 24/7 để khách hàng có thể lựa chọn được
+                                <p class="text">SabujCha luôn nhiệt tình tư vấn 24/7 để khách hàng có thể lựa chọn được
                                     những món đồ phù hợp nhất.</p>
                             </div>
                             <div class="about-block">
@@ -175,11 +126,8 @@
                 <div class="image-column col-lg-6 col-md-12 col-sm-12">
                     <div class="inner-column">
                         <figure class="image-1"><img src="images/resource/anh1.jpg" alt /></figure>
-                        <figure class="image-2"><img src="images/resource/anh2.jpg" alt /></figure>
-                        <div class="experience">
-                            <img src="{{ asset('images/druma.png') }}" />
+                        <figure class="image-2"><img src="images/resource/anh3.jpeg" alt /></figure>
 
-                        </div>
                     </div>
                 </div>
             </div>
@@ -187,89 +135,6 @@
     </section>
 
 
-    {{-- <section class="services-section">
-        <div class="bg-image" style="background-image: url(images/background/1.jpg)"></div>
-        <div class="anim-icons">
-            <span class="icon icon-wave-line"></span>
-        </div>
-        <div class="auto-container">
-            <div class="sec-title text-center">
-                <span class="sub-title">Sản phẩm hot của chúng tôi</span>
-                <h2>Thời trang độc lạ phong cách Nhật</h2>
-            </div>
-            <div class="row">
-
-                <div class="service-block col-xl-3 col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <figure class="image">
-                                <a href="page-service-details.html"><img src="images/resource/sp1.jpeg" alt /></a>
-                            </figure>
-                        </div>
-                        <div class="content-box">
-                            <i class="icon ">一</i>
-                            <span class="sub-title">01 Service</span>
-                            <h4 class="title"><a href="page-service-details.html">Áo phông</a></h4>
-                            <div class="text">Áo phông unisex họa tiết nhật bản siêu ngầu</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="service-block col-xl-3 col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="300ms">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <figure class="image">
-                                <a href="page-service-details.html"><img src="images/resource/sp6.jpg" alt /></a>
-                            </figure>
-                        </div>
-                        <div class="content-box">
-                            <i class="icon">二</i>
-                            <span class="sub-title">02 Service</span>
-                            <h4 class="title">
-                                <a href="page-service-details.html">Áo blazer</a>
-                            </h4>
-                            <div class="text">Một chiếc áo mà phù hợp với hầu hết mọi người lịnh lãm,dễ thương, phong
-                                cách đêu có</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="service-block col-xl-3 col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="600ms">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <figure class="image">
-                                <a href="page-service-details.html"><img src="images/resource/sp4.jpeg" alt /></a>
-                            </figure>
-                        </div>
-                        <div class="content-box">
-                            <i class="icon ">三</i>
-                            <span class="sub-title">03 Service</span>
-                            <h4 class="title"><a href="page-service-details.html">Kimono</a></h4>
-                            <div class="text">Được phong theo chiếc áo Kimono truyền thống của Nhật Bản nhưng đã được cải
-                                tiến dễ mặc dễ phối đồ</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="service-block col-xl-3 col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="900ms">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <figure class="image">
-                                <a href="page-service-details.html"><img src="images/resource/sp5.jpg" alt /></a>
-                            </figure>
-                        </div>
-                        <div class="content-box">
-                            <i class="icon ">四</i>
-                            <span class="sub-title">04 Service</span>
-                            <h4 class="title"><a href="page-service-details.html">Túi sách</a></h4>
-                            <div class="text">Các mẫu túi phong cách độc quyền từ Sclothes phù hợp nhiều mục đích khác
-                                nhau</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
 
 
     <section  class="services-section">
@@ -289,16 +154,16 @@
                         <div class="product-block all ">
                             <div class="inner-box no-border">
                                 <div class="image">
-                                    <a href="/productdetail">
+                                    <a href="{{ route('products.detail', ['id' => $item->id]) }}">
                                         <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->product_name }}"
                                             style="width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
                                     </a>
                                 </div>
                                 <div class="content ">
-                                    <h4><a href="/productdetail">{{ $item->product_name }}</a></h4>
+                                    <h4><a href="{{ route('products.detail', ['id' => $item->id]) }}">{{ $item->product_name }}</a></h4>
                                     <span class="price">{{ number_format($item->regular_price, 0, ',', '.') }}₫</span>
                                 </div>
-                                <a href="page-about.html" class="theme-btn btn-style-one mb-2 small">
+                                <a href="{{ route('products.detail', ['id' => $item->id]) }}" class="theme-btn btn-style-one mb-2 small">
                                     <span class="btn-title">Mua ngay</span>
                                 </a>
                                 <div class="icon-box">
@@ -359,15 +224,15 @@
     </section>
 
 
-    <section class="call-to-action" style="background-image: url(images/background/bg2.jpg)">
+    <section class="call-to-action" style="background-image: url(images/background/bg9.webp)">
         <div class="auto-container">
             <div class="outer-box">
-                <a href="https://www.youtube.com/watch?v=LOAqnH511GA" class="play-now lightbox-image"><i
+                <a href="https://youtu.be/prIcP_Jrx7o" class="play-now lightbox-image"><i
                         class="icon fa fa-play"></i><span class="ripple"></span></a>
                 <div class="sec-title light mb-0">
                     <div class="sub-title">Liên hệ với chúng tôi bất cứ lúc nào</div>
                     <h1>Sản phẩm độc đáo <br />của chúng tôi</h1>
-                    <a href="page-services.html" class="theme-btn btn-style-one hvr-light"><span class="btn-title">Xem
+                    <a href="https://youtu.be/prIcP_Jrx7o" class="theme-btn btn-style-one hvr-light"><span class="btn-title">Xem
                             video</span></a>
                 </div>
             </div>
@@ -435,9 +300,9 @@
                     <div class="content-column col-lg-7 col-md-12 col-sm-12 order-2">
                         <div class="inner-column">
                             <div class="sec-title light">
-                                <span class="sub-title">We Deliver on time</span>
-                                <h2>Thay đổi phong cách cùng chúng tôi!</h2>
-                                <div class="text"> Sclothes luôn cam kết mang đến trải nghiệm mua sắm tuyệt vời nhất cho
+                                <span class="sub-title" style="color: black">SabujCha</span>
+                                <h2 style="color: black">Nghệ thuật trà, hòa quyện cảm xúc!</h2>
+                                <div class="text" style="color: black"> SabujCha luôn cam kết mang đến trải nghiệm mua sắm tuyệt vời nhất cho
                                     khách hàng. Chúng tôi không ngừng nỗ lực để cung cấp dịch vụ chất lượng và giao hàng
                                     đúng hẹn, giúp khách hàng yên tâm tận hưởng sản phẩm mình yêu thích. Sự hài lòng của quý
                                     khách luôn là ưu tiên hàng đầu của chúng tôi. .</div>
@@ -477,8 +342,8 @@
                     </div>
                     <div class="image-column col-lg-5 col-md-12 col-sm-12">
                         <div class="inner-column">
-                            <figure class="image"><img src="images/resource/nn.png" alt
-                                    style="width: 810px; height: auto;" /></figure>
+                            <figure class="image"><img src="images/resource/am.png" alt
+                                    style="width: 810px; height: auto; margin-top:125px;" /></figure>
 
                         </div>
                     </div>
@@ -490,8 +355,8 @@
     <section class="project-section pb-0">
         <div class="large-container">
             <div class="sec-title text-center">
-                <span class="sub-title">Top phong cách</span>
-                <h2>Phong cách được ưa chuộng</h2>
+                <span class="sub-title"></span>
+                <h2>Sản phẩm được ưa chuộng</h2>
             </div>
 
             <div class="project-carousel owl-carousel owl-theme">
@@ -500,7 +365,7 @@
                     <div class="inner-box">
                         <div class="image-box">
                             <figure class="image">
-                                <a href="images/set1.jpg" class="lightbox-image"><img src="images/set1.jpg" alt /></a>
+                                <a href="images/set1.jpg" class="lightbox-image"><img src="images/set2.jpg" alt /></a>
                             </figure>
                             <a href="page-project-details.html" class="icon"><i class="fa fa-plus"></i></a>
                         </div>
@@ -512,7 +377,7 @@
                     <div class="inner-box">
                         <div class="image-box">
                             <figure class="image">
-                                <a href="images/resource/project-2.jpg" class="lightbox-image"><img src="images/set2.jpg"
+                                <a href="images/resource/project-2.jpg" class="lightbox-image"><img src="images/set3.jpg"
                                         alt /></a>
                             </figure>
                             <a href="page-project-details.html" class="icon"><i class="fa fa-plus"></i></a>
@@ -525,7 +390,7 @@
                     <div class="inner-box">
                         <div class="image-box">
                             <figure class="image">
-                                <a href="images/resource/project-3.jpg" class="lightbox-image"><img src="images/set3.jpg"
+                                <a href="images/resource/project-3.jpg" class="lightbox-image"><img src="images/set4.jpg"
                                         alt /></a>
                             </figure>
                             <a href="page-project-details.html" class="icon"><i class="fa fa-plus"></i></a>
@@ -538,7 +403,7 @@
                     <div class="inner-box">
                         <div class="image-box">
                             <figure class="image">
-                                <a href="images/resource/project-4.jpg" class="lightbox-image"><img src="images/set4.jpg"
+                                <a href="images/resource/project-4.jpg" class="lightbox-image"><img src="images/set2.jpg"
                                         alt /></a>
                             </figure>
                             <a href="page-project-details.html" class="icon"><i class="fa fa-plus"></i></a>
@@ -563,7 +428,7 @@
                     <div class="inner-column">
                         <div class="sec-title light">
                             <span class="sub-title">Bộ sưu tập mới</span>
-                            <h2>Nhận thông báo của chúng tôi về bộ sưu tập mới nhất</h2>
+                            <h2>Nhận thông báo của chúng tôi về những sản phẩm mới nhất</h2>
                         </div>
 
                         <div class="feature-block-two">
@@ -572,8 +437,7 @@
                                     <i class="fa fa-clock"></i>
                                 </i>
                                 <h4 class="title">Sắp ra mắt</h4>
-                                <p class="text">HOKKAIDO LINEN KIMONO - SỰ ‘LAI TẠO’ GIỮA THỨ QUÀ CỦA THIÊN NHIÊN VỚI NÉT
-                                    ĐẸP TRUYỀN THỐNG XỨ PHÙ TANG.</p>
+                                <p class="text">Cơ hội cho Trà Shan Tuyết phủ sóng thị trường Châu Âu</p>
                             </div>
                         </div>
 
@@ -583,7 +447,7 @@
                                     <i class="fa fa-clock"></i>
                                 </i>
                                 <h4 class="title">Sắp ra mắt</h4>
-                                <p class="text">KOWASU SHIRT: KHI SẮC MÀU ĐƯỢC GIẢI PHÓNG KHỎI BÓNG TỐI.</p>
+                                <p class="text">Amata – Tinh chất Trà Shan Tuyết cổ thụ</p>
                             </div>
                         </div>
                     </div>
@@ -634,14 +498,11 @@
                 <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
                     <div class="inner-column">
                         <div class="sec-title">
-                            <span class="sub-title">Dự án mới</span>
-                            <h2>"YOUNG VIETNAMESE LADY COLLECTION"</h2>
-                            <h4>LẦN ĐẦU TIÊN YẾU TỐ TRUYỀN THỐNG VIỆT ĐƯỢC ĐƯA VÀO THIẾT KẾ CỦA CLOTHES
+                            <span class="sub-title">Sản phẩm mới</span>
+                            <h2>"Amata – Tinh chất Trà Shan Tuyết cổ thụ"</h2>
+                            <h4>Thú thưởng trà xưa và nay của người Việt
                             </h4>
-                            <div class="text">‘Young Vietnamese Lady’ Collection chính thức ra mắt từ 08.08.2024 là sự
-                                kết hợp giữa những sản phẩm “cũ” nhưng khoác trên mình một tinh thần “mới”, tái hiện bản sắc
-                                vùng miền cùng những giá trị truyền thống trân quý thông qua thời trang phi giới tính và sức
-                                sáng tạo không giới hạn của thế hệ trẻ ngày nay.</div>
+                            <div class="text">Amata là dòng trà đặc biệt, mang đến sự mát lành và ngọt ngào với tác dụng chữa lành và thải độc cơ thể. Được khai thác từ những vùng nguyên liệu đậm đà, dồi dào nội chất, Amata chứa đựng những tinh túy quý giá của trà Shan tuyết cổ thụ – loại cây linh khí của đất trời. Qua quá trình chiết xuất cẩn trọng và tỉ mỉ, mỗi giọt trà đều lưu giữ trọn vẹn hương vị đặc trưng và tinh túy nhất. Khi nhấp một ngụm Amata, bạn sẽ như cảm nhận được hương đồng gió nội hòa quyện cùng mùi vị núi rừng, đưa tâm hồn trở về với thiên nhiên hoang sơ, hùng vĩ.</div>
                         </div>
                         <div class="row">
 
@@ -659,16 +520,12 @@
                             </div>
 
                             <div class="feature-block-three col-lg-4 col-md-4 col-sm-12">
-                                <figure class="image"><img src="images/background/ao3.jpg" alt=""
+                                <figure class="image"><img src="images/background/ao1.jpg" alt=""
                                         style="width: 250px; height: auto; border-radius: 10px;" /></figure>
 
                             </div>
                         </div>
-                        <div class="founder-info">
-                            <div class="thumb"><img src="images/background/ccc.jpg" alt /></div>
-                            <h5 class="name">Brittary Herman</h5>
-                            <span class="designation">Nhà thiết kế & họa sĩ sơn dầu</span>
-                        </div>
+
                     </div>
                 </div>
 
@@ -766,15 +623,12 @@
 
 
     <section class="news-section">
-        <div class="anim-icons">
-            <div class="float-image wow zoomInLeft"><img src="images/resource/image-removebg-preview (26).png" alt />
-            </div>
-        </div>
+
         <div class="auto-container">
             <div class="sec-title text-center">
                 <span class="sub-title">Tin tức</span>
                 <h2>
-                    Tin tức về thới trang<br />
+                    Tin tức
                     mới nhất
                 </h2>
             </div>
@@ -784,7 +638,7 @@
                     <div class="inner-box">
                         <div class="image-box">
                             <figure class="image">
-                                <a href="news-details.html"><img src="images/tt1.jpg" alt /></a>
+                                <a href="news-details.html"><img src="images/tt1.png" alt /></a>
                             </figure>
                             <span class="date"><b>28</b> SEP</span>
                         </div>
@@ -793,8 +647,9 @@
                                 <li><i class="fa fa-user"></i> by Admin</li>
                                 <li><i class="fa fa-comments"></i> 2 Comments</li>
                             </ul>
-                            <span>HOKKAIDO LINEN KIMONO - SỰ ‘LAI TẠO’ GIỮA THỨ QUÀ CỦA THIÊN NHIÊN VỚI NÉT ĐẸP TRUYỀN THỐNG
-                                XỨ PHÙ TANG</span>
+                            <span>Trà như Bách Thái Nhân Sinh
+                                Trà như thơ: có uyển chuyển hàm xúc, có phóng khoáng ngang tàng; trà cũng như thư pháp:..
+                            </span>
                             <a href="news-details.html" class="read-more">Read More <i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
@@ -813,8 +668,7 @@
                                 <li><i class="fa fa-user"></i> by Admin</li>
                                 <li><i class="fa fa-comments"></i> 2 Comments</li>
                             </ul>
-                            <span class="title"><a href="news-details.html">KOWASU SHIRT: KHI SẮC MÀU ĐƯỢC GIẢI PHÓNG
-                                    KHỎI BÓNG TỐI
+                            <span class="title"><a href="news-details.html">Mùa xuân – mùa khởi đầu của vạn vật, của đất trời, cây cối sau quãng thời gian dài “ngủ đông” được đánh thức bằng không khí se se lạnh bao phủ đất trời và sự ẩm ướt của riêng mùa xuân.
                                 </a></span>
                             <a href="news-details.html" class="read-more">Read More <i class="fa fa-angle-right"></i></a>
                         </div>
@@ -834,8 +688,7 @@
                                 <li><i class="fa fa-user"></i> by Admin</li>
                                 <li><i class="fa fa-comments"></i> 2 Comments</li>
                             </ul>
-                            <span class="title"><a href="news-details.html">LOOKBOOK ZUNE.ZX 2023| KAIZEN (改善) – HÀNH
-                                    TRÌNH THAY ĐỔI 3 CHƯƠNG</a>
+                            <span class="title"><a href="news-details.html">Bạch Trà – loại trà sống ở trên núi cao, tránh xa hồng trần thì vị càng ngọt, hương thơm như hương rừng, sạch trong như nước suối đầu non.</a>
                             </span>
                             <a href="news-details.html" class="read-more">Read More <i class="fa fa-angle-right"></i></a>
                         </div>
@@ -851,28 +704,7 @@
             <span class="icon dotted-line-1"></span>
             <span class="icon dotted-line-2"></span>
         </div>
-        <div class="auto-container">
 
-            <div class="sponsors-outer">
-
-                <ul class="clients-carousel owl-carousel owl-theme">
-                    <li class="slide-item">
-                        <a href="#"><img src="images/clients/client.png" alt /></a>
-                    </li>
-                    <li class="slide-item">
-                        <a href="#"><img src="images/clients/client.png" alt /></a>
-                    </li>
-                    <li class="slide-item">
-                        <a href="#"><img src="images/clients/client.png" alt /></a>
-                    </li>
-                    <li class="slide-item">
-                        <a href="#"><img src="images/clients/client.png" alt /></a>
-                    </li>
-                    <li class="slide-item">
-                        <a href="#"><img src="images/clients/client.png" alt /></a>
-                    </li>
-                </ul>
-            </div>
         </div>
     </section>
 @endsection

@@ -23,14 +23,36 @@
                                     <label for="" class="form-label">Giá sản phẩm:</label>
                                     <input type="number" class="form-control" min="1" name="regular_price" placeholder="Nhập giá sản phẩm">
                                 </div>
+
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Giá khuyến mại:</label>
+                                    <input type="number" class="form-control" min="1" name="discount_price" placeholder="Nhập giá sản phẩm">
+                                </div>
+
+
                                 <div class="mb-3">
                                     <label for="" class="form-label">Ngày nhập:</label>
                                     <input type="date" class="form-control" min="1" name="created_at">
                                 </div>
-                                <div class="mb-3">
+                                {{-- <div class="mb-3">
                                     <label for="" class="form-label">Mô tả:</label>
                                     <textarea class="form-control" rows="3" name="product_description" placeholder="Nhập mô tả sản phẩm"></textarea>
+                                </div> --}}
+
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Mô tả ngắn:</label>
+                                    <textarea class="form-control"  rows="3" name="short_description" placeholder="Nhập mô tả sản phẩm">{{ old('product_description') }}</textarea>
                                 </div>
+
+
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Mô tả:</label>
+                                    <textarea class="summernote" rows="3" name="product_description" placeholder="Nhập mô tả sản phẩm">{{ old('product_description') }}</textarea>
+                                </div>
+
+
+
+
                                 <div class="mb-3">
                                     <label for="" class="form-label">Danh mục:</label>
                                     <select class="form-control" name="category_id">
@@ -43,7 +65,7 @@
 
                                 <div class="mb-3">
                                     <label for="" class="form-label">Chương trình khuyến mại:</label>
-                                    <select class="form-control" name="promotions_id ">
+                                    <select class="form-control" name="promotions_id">
                                         @foreach ($promotions as $item)
                                             <option value="{{ $item->id }}">{{ $item->promotions_name }}</option>
                                         @endforeach

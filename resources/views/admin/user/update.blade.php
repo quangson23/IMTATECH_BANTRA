@@ -9,7 +9,7 @@
     <div class="main-content">
         <section class="section">
             <div class="card">
-                <h4 class="card-header">Sửa danh mục</h4>
+                <h4 class="card-header">Chỉnh sửa quyền</h4>
                 <div class="card-body">
                     <form action="{{ route('user.update', $userS->id) }}" method="POST" enctype="multipart/form-data">
                         @method('put')
@@ -17,7 +17,7 @@
 
                         <div class="mb-3">
                             <label for="role" class="form-label">Quyền hạn:</label>
-                            <select class="form-select" name="role_id" id="role">
+                            <select class="form-control" name="role_id" id="role" >
                                 @foreach ($roles as $role)
                                     <option value="{{ $role['id'] }}" {{ $userS->role == $role['id'] ? 'selected' : '' }}>
                                         {{ $role['name'] }}
@@ -27,7 +27,7 @@
                         </div>
 
                         <div class="mb-3 d-flex justify-content-center">
-                            <button type="submit" class="btn btn-success">Sửa sp</button>
+                            <button type="submit" class="btn btn-success">Sửa quyền</button>
                         </div>
                     </form>
 

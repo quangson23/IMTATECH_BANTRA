@@ -61,7 +61,7 @@
 
 
                                             <td style="display: flex; gap: 10px; align-items: center; height: 100px;">
-                                                <a href="#">
+                                                <a href="{{ route('category.show', $item->id) }}">
                                                     <button type="button" class="btn btn-primary">
                                                         <i class="fas fa-info-circle"></i> <!-- Biểu tượng thông tin -->
                                                     </button>

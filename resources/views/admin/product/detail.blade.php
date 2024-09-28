@@ -39,7 +39,7 @@
 
                         <div class="mb-3">
                             <label for="" class="form-label">Danh mục:</label><br>
-                            <select class="form-select" name="category_id">
+                            <select class="form-control" name="category_id" disabled>
                                 @foreach ($categories as $item)
                                     <option {{ $item->id == $productS->category_id ? 'selected' : '' }}
                                         value="{{ $item->id }}">{{ $item->categories_name }}</option>
@@ -48,9 +48,17 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="" class="form-label">Hình ảnh:</label>
-                            <input type="file" class="form-control" name="image">
+                            <label for="image" class="form-label">Ảnh</label>
+                            <div id="image" class="border p-3">
+                                <!-- Ảnh được hiển thị ở đây -->
+                                <img src="{{ asset('storage/' . $productS->image) }}" alt="Ảnh sản phẩm" id="image" width="200px" style="display:block;" >
+                            </div>
                         </div>
+
+
+
+
+
 
 
 

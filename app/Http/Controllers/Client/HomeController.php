@@ -3,19 +3,24 @@
 namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
+use App\Models\Banner;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Promotion;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public $categories;
      public $products;
-
+     public $banners;
+     public $promotions;
     public function __construct()
     {
         $this->categories = new Category();
         $this->products = new Product();
+        $this->banners = new Banner();
+        $this->promotions = new Promotion();
     }
 
     public function index()
@@ -23,9 +28,9 @@ class HomeController extends Controller
         $listCategory = $this->categories->getAll();
         // dd( $listCategory);
         $listProduct = $this->products->getAll();
-
-
-        return view('client.index', ['categories' => $listCategory, 'products' => $listProduct]);
+        $listBanner = $this->banners->getAll();
+        $listPromotion = $this->promotions->getAll();
+        return view('client.index', ['categories' => $listCategory, 'products' => $listProduct, 'banners' => $listBanner, 'promotions' => $listPromotion]);
     }
 
 
@@ -68,10 +73,11 @@ class HomeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show()
     {
-        //
+
     }
+
 
     /**
      * Show the form for editing the specified resource.

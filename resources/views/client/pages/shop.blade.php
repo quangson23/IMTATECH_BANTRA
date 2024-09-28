@@ -4,8 +4,7 @@
 <section class="page-title" style="background-image: url(images/bannerpage.jpg);">
     <div class="auto-container">
         <div class="title-outer">
-            <h1 class="title">Cửa hàng
-            </h1>
+            <h1 class="title">Cửa hàng</h1>
             <ul class="page-breadcrumb">
                 <li><a href="index-2.html">Trang chủ</a></li>
                 <li>Sản phẩm</li>
@@ -14,15 +13,13 @@
     </div>
 </section>
 
-
 <section class="featured-products">
     <div class="auto-container">
         <div class="row clearfix">
             <div class="col-lg-3 col-md-12 col-sm-12">
                 <div class="shop-sidebar">
                     <div class="sidebar-search">
-                        <form action="https://html.kodesolution.com/2024/meato-html/shop-products.html" method="post"
-                            class="search-form">
+                        <form action="https://html.kodesolution.com/2024/meato-html/shop-products.html" method="post" class="search-form">
                             <div class="form-group">
                                 <input type="search" name="search-field" placeholder="Search..." required>
                                 <button><i class="lnr lnr-icon-search"></i></button>
@@ -34,12 +31,19 @@
                             <h5 class="widget-title">Danh mục</h5>
                         </div>
                         <div class="widget-content">
+                            {{-- @foreach ($categories as $index => $item)
+                                <ul class="category-list clearfix">
+                                    <li><a href="shop-product-details.html">{{ $item->categories_name }}</a></li>
+                                </ul>
+                            @endforeach --}}
                             @foreach ($categories as $index => $item)
-                            <ul class="category-list clearfix">
-                                <li><a href="shop-product-details.html">{{ $item->categories_name }}</a></li>
+    <ul class="category-list clearfix">
+        <li>
+            <a href="{{ url('shop?category_id=' . $item->id) }}">{{ $item->categories_name }}</a>
+        </li>
+    </ul>
+@endforeach
 
-                            </ul>
-                            @endforeach
                         </div>
                     </div>
                     <div class="sidebar-widget price-filters">
@@ -51,8 +55,7 @@
                             <div class="clearfix">
                                 <p>Giá:</p>
                                 <div class="title"></div>
-                                <div class="input"><input type="text" class="property-amount" name="field-name"
-                                        readonly></div>
+                                <div class="input"><input type="text" class="property-amount" name="field-name" readonly></div>
                                 <input type="submit" value="Filter">
                             </div>
                         </div>
@@ -63,20 +66,17 @@
                         </div>
                         <div class="post-inner">
                             <div class="post">
-                                <figure class="post-thumb"><a href="shop-details.html"><img
-                                            src="images/resource/products/thumb-1.jpg" alt></a></figure>
+                                <figure class="post-thumb"><a href="shop-details.html"><img src="images/resource/products/thumb-1.jpg" alt></a></figure>
                                 <a href="shop-product-details.html">TV box</a>
                                 <span class="price">$45.00</span>
                             </div>
                             <div class="post">
-                                <figure class="post-thumb"><a href="shop-details.html"><img
-                                            src="images/resource/products/thumb-2.jpg" alt></a></figure>
+                                <figure class="post-thumb"><a href="shop-details.html"><img src="images/resource/products/thumb-2.jpg" alt></a></figure>
                                 <a href="shop-product-details.html">Delivery box</a>
                                 <span class="price">$34.00</span>
                             </div>
                             <div class="post">
-                                <figure class="post-thumb"><a href="shop-details.html"><img
-                                            src="images/resource/products/thumb-3.jpg" alt></a></figure>
+                                <figure class="post-thumb"><a href="shop-details.html"><img src="images/resource/products/thumb-3.jpg" alt></a></figure>
                                 <a href="shop-product-details.html">Set paper box</a>
                                 <span class="price">$29.00</span>
                             </div>
@@ -85,9 +85,7 @@
                 </div>
             </div>
             <div class="col-lg-9 col-md-12 col-sm-12 content-side mt-md-60">
-
                 <div class="mixitup-gallery">
-
                     <div class="filters clearfix">
                         <ul class="filter-tabs filter-btns clearfix">
                             <li class="active filter" data-role="button" data-filter="all">All</li>
@@ -103,15 +101,15 @@
                         <div class="product-block all mix transport cargo col-lg-4 col-md-6 col-sm-12">
                             <div class="inner-box">
                                 <div class="image">
-                                    <a href="/productdetail">
+                                    <a href="{{ route('products.detail', ['id' => $item->id]) }}">
                                         <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->product_name }}" style="width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
                                     </a>
                                 </div>
                                 <div class="content">
-                                    <h4><a href="/productdetail">{{ $item->product_name }}</a></h4>
+                                    <h4><a href="{{ route('products.detail', ['id' => $item->id]) }}">{{ $item->product_name }}</a></h4>
                                     <span class="price">{{ number_format($item->regular_price, 0, ',', '.') }}₫</span>
                                 </div>
-                                <a href="page-about.html" class="theme-btn btn-style-one mb-2 small">
+                                <a href="{{ route('products.detail', ['id' => $item->id]) }}" class="theme-btn btn-style-one mb-2 small">
                                     <span class="btn-title">Mua ngay</span>
                                 </a>
                                 <div class="icon-box">
@@ -126,7 +124,6 @@
                         </div>
                         @endforeach
                     </div>
-
                 </div>
             </div>
         </div>

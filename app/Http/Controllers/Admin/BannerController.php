@@ -54,10 +54,12 @@ class BannerController extends Controller
     }
 
 
-    public function show(string $id)
+    public function show()
     {
-        //
+        // $banners = Banner::all(); // Or adjust based on your needs
+        // return view('client.index', compact('banners'));
     }
+
 
     public function edit(string $id)
     {
@@ -101,7 +103,7 @@ class BannerController extends Controller
         return redirect()->route('banner.index');
     }
 
-  
+
     public function destroy(string $id)
     {
           // Xử lý xóa sản phẩm
@@ -120,4 +122,9 @@ class BannerController extends Controller
 
         return redirect()->route('banner.index');
     }
+
+
+
+
+
 }

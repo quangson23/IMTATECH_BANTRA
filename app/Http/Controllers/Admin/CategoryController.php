@@ -73,8 +73,20 @@ class CategoryController extends Controller
      */
     public function show(string $id)
     {
-        //
+          // form sửa sản phẩm
+        // Lấy sản phẩm theo id
+        $categorieS = $this->categories->find($id);
+        $categories = DB::table('categories')->get();
+        if (!$categorieS) {
+            return redirect()->route('category.index');
+        }
+        return view('admin.category.detail', compact('categorieS', 'categories'));
     }
+
+
+ 
+
+
 
 
     /**

@@ -23,6 +23,6 @@ class CheckRoleAdminMiddleware
         }
 
         // Thay vì abort(403), chúng ta thêm thông báo vào session và redirect
-        return redirect()->route('loginadmin')->with('error', 'Tài khoản của bạn không phải là admin.');
+        return redirect()->route('login')->with('error', 'Tài khoản của bạn không phải là admin.');
     }
 }
