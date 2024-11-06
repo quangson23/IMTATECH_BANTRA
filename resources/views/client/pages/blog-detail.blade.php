@@ -1,18 +1,17 @@
-
-
 @extends('layout.client.master')
 @section('main-content')
-<section class="page-title" style="background-image: url(images/bannerpage.jpg)">
-    <div class="auto-container">
-        <div class="title-outer">
-            <h1 class="title">News Details</h1>
-            <ul class="page-breadcrumb">
-                <li><a href="index-2.html">Home</a></li>
-                <li>News</li>
-            </ul>
+    <section class="page-title" style="background-image: url(images/bannerpage.jpg)">
+        <div class="auto-container">
+            <div class="title-outer">
+                <h1 class="title">News Details</h1>
+                <ul class="page-breadcrumb">
+                    <li><a href="index-2.html">Home</a></li>
+                    <li>News</li>
+                </ul>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
 
 
 <section class="blog-details">
@@ -83,15 +82,12 @@
                         </ul>
 
                     </div>
-                
 
 
+
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-
+    </section>
 @endsection
-

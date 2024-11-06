@@ -19,6 +19,7 @@ use App\Http\Controllers\Client\ProductController as ClientProductController;
 use App\Http\Controllers\Client\ShopController;
 use App\Http\Controllers\OkController;
 use App\Http\Controllers\PdfController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\TestController;
 use App\Http\Middleware\CheckRoleAdminMiddleware;
 use Illuminate\Support\Facades\Route;
@@ -51,11 +52,14 @@ Route::get('admin', [DashboardController::class, 'index'])
 
 // ->middleware(CheckRoleAdminMiddleware::class)
 
-// Route::get('shop', function () {
-//     return view('client.pages.shop');['auth', 'auth.admin']
-// });
-Route::get('shop', [ShopController::class, 'index']);
-Route::get('/', [HomeController::class, 'index'])->middleware('auth');
+Route::get('shop', function () {
+    return view('client.pages.shop');
+    ['auth', 'auth.admin'];
+});
+
+Route::post('/products/{id}/review', [ReviewController::class, 'store'])->name('store');
+
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('blog-detail', function () {
     return view('client.pages.blog-detail');
@@ -154,7 +158,6 @@ Route::middleware('auth')->prefix('orders')
         Route::delete('/destroy/{id}', [AdminOrderController::class, 'destroy'])->name('destroy');
 
         Route::get('/print/{id}', [AdminOrderController::class, 'printInvoice'])->name('print');
-
     });
 
 // Route::get('loginadmin', [AuthController::class, 'showFormLoginAdmin']);
@@ -164,5 +167,3 @@ Route::post('login', [AuthController::class, 'login'])->name('login');
 Route::get('register', [AuthController::class, 'showFormRegister']);
 Route::post('register', [AuthController::class, 'register'])->name('register');
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
-
-

@@ -1,18 +1,25 @@
-
 <style>
     .xedo {
         position: absolute;
-        top: -10px; /* Adjust as needed */
-        right: -10px; /* Adjust as needed */
-        background-color: red; /* Background color for the badge */
-        color: white; /* Text color */
-        border-radius: 50%; /* Makes it a circle */
-        width: 20px; /* Adjust size as needed */
-        height: 20px; /* Adjust size as needed */
+        top: -10px;
+        /* Adjust as needed */
+        right: -10px;
+        /* Adjust as needed */
+        background-color: red;
+        /* Background color for the badge */
+        color: white;
+        /* Text color */
+        border-radius: 50%;
+        /* Makes it a circle */
+        width: 20px;
+        /* Adjust size as needed */
+        height: 20px;
+        /* Adjust size as needed */
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 12px; /* Font size */
+        font-size: 12px;
+        /* Font size */
     }
 </style>
 
@@ -29,7 +36,8 @@
                 <ul class="list-style-one">
                     <li></li>
                     <li></li>
-                    <li><i class="fa fa-map-marker-alt"></i> Ngõ 3 Phố Phú Kiều, Phường Phúc Diễn, Quận Bắc Từ Liêm, Hà Nội</li>
+                    <li><i class="fa fa-map-marker-alt"></i> Ngõ 3 Phố Phú Kiều, Phường Phúc Diễn, Quận Bắc Từ Liêm, Hà
+                        Nội</li>
                     <li><i class="fa fa-clock"></i>Mở cửa: 8 sáng - 5 chiều</li>
                     <li><i class="fa fa-phone-volume"></i> <a href="tel:+92(8800)87890">0981679804</a></li>
                 </ul>
@@ -54,7 +62,7 @@
                         <a href="#"><span class="fab fa-instagram"></span></a>
                     </li>
                     <li class="greeting-message mt-1 text-white">
-                        Xin chào, {{ Auth::user()->name }} <!-- Replace with user's name -->
+                        {{-- Xin chào, {{ Auth::user()->name }} <!-- Replace with user's name --> --}}
                     </li>
                 </ul>
             </div>
@@ -66,33 +74,32 @@
             <div class="main-box">
                 <div class="logo-box">
                     <a href="/">
-                        <img src="{{asset('images/logotra.png')}}" alt="Meato" title="Meato" style="width: 130px; height: auto;">
+                        <img src="{{ asset('images/logotra.png') }}" alt="Meato" title="Meato"
+                            style="width: 130px; height: auto;">
                     </a>
                 </div>
 
                 <div class="nav-outer">
                     <nav class="nav main-menu">
                         <ul class="navigation">
+                            {{-- <li>
+                                <a href="/">Trang chủ</a>
+                            </li> --}}
 
-
-                            </li>
-
-                            <li >
+                            <li>
                                 <a href="/shop">Cửa hàng</a>
-
                             </li>
 
                             <li class="dropdown">
                                 <a href="/shop">Danh mục</a>
 
                                 <ul>
-                                @foreach ($categories as $index => $item)
-
-                                    <li><a href="shop-products.html">{{ $item->categories_name }}</a></li>
-
-
-                                @endforeach
-                            </ul>
+                                    @foreach ($categories as $index => $item)
+                                        <li><a
+                                                href="{{ url('shop?category_id=' . $item->id) }}">{{ $item->categories_name }}</a>
+                                        </li>
+                                    @endforeach
+                                </ul>
                             </li>
 
                             <li class="dropdown">
@@ -104,6 +111,8 @@
 
                                 </ul> --}}
                             </li>
+
+
 
                             <li >
                                 <a href="{{ route('blog.index') }}">Tin tức</a>
@@ -124,10 +133,10 @@
                         </button>
                         <a href="{{ route('cart.list') }}" class="ui-btn position-relative">
                             <i class="lnr-icon-shopping-cart"></i>
-                            <span class="xedo badge-circle">{{session ('cart') ? count(session('cart')) : '0'}}</span>
+                            <span class="xedo badge-circle">{{ session('cart') ? count(session('cart')) : '0' }}</span>
                         </a>
 
-                        <a href="{{route('ordersc.index')}}" class="ui-btn"><i class="lnr-icon-user"></i></a>
+                        <a href="{{ route('ordersc.index') }}" class="ui-btn"><i class="lnr-icon-user"></i></a>
                         <a href="page-contact.html" class="theme-btn btn-style-one alternate"><span
                                 class="btn-title">Liên hệ ngay</span></a>
 
@@ -144,7 +153,7 @@
             <nav class="menu-box">
                 <div class="upper-box">
                     <div class="nav-logo">
-                        <a href="index-2.html"><img src="{{asset('images/logotra.png')}}" alt title="Meato" /></a>
+                        <a href="index-2.html"><img src="{{ asset('images/logotra.png') }}" alt title="Meato" /></a>
                     </div>
                     <div class="close-btn"><i class="icon fa fa-times"></i></div>
                 </div>
@@ -217,7 +226,8 @@
                 <div class="inner-container">
 
                     <a href="/">
-                        <img src="{{asset('images/logotra.png')}}" alt="Meato" title="Meato" style="width: 130px; height: auto;">
+                        <img src="{{ asset('images/logotra.png') }}" alt="Meato" title="Meato"
+                            style="width: 130px; height: auto;">
                     </a>
 
                     <div class="nav-outer">

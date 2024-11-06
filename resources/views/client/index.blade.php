@@ -5,63 +5,60 @@
             <div class="rev_slider fullwidthabanner" id="rev_slider_one" data-version="5.4.1">
                 <ul>
                     @foreach ($banners as $banner)
+                        <li data-index="rs-1" data-transition="zoomout">
+
+                            <img src="{{ Storage::url($banner->image) }}" alt class="rev-slidebg" />
+                            <div class="tp-caption tp-shape tp-shapewrapper tp-resizeme ipad-hidden rs-parallaxlevel-1"
+                                data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" data-paddingright="[0,0,0,0]"
+                                data-paddingtop="[0,0,0,0]" data-responsive_offset="on" data-type="shape" data-height="auto"
+                                data-whitespace="nowrap" data-width="none" data-hoffset="['110','110','110','110']"
+                                data-voffset="['110','90','90','90']" data-x="['right','right','right','right']"
+                                data-y="['bottom','bottom','bottom','bottom']"
+                                data-frames="[{&quot;from&quot;:&quot;x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;speed&quot;:1500,&quot;to&quot;:&quot;o:1;&quot;,&quot;delay&quot;:1000,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1000,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;mask&quot;:&quot;x:0;y:0;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]">
 
 
+                                <!-- <i class="float-icon"><img src="./images/image.png" alt=""></i> -->
 
+                            </div>
+                            <div class="tp-caption tp-resizeme rs-parallaxlevel-1 ipad-hidden"
+                                data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" data-paddingright="[0,0,0,0]"
+                                data-paddingtop="[0,0,0,0]" data-responsive_offset="on" data-type="shape" data-height="none"
+                                data-whitespace="nowrap" data-width="none" data-hoffset="['0','0','0','0']"
+                                data-voffset="['110','90','90','90']" data-x="['right','right','right','right']"
+                                data-y="['bottom','bottom','bottom','bottom']"
+                                data-frames="[{&quot;from&quot;:&quot;y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;speed&quot;:1500,&quot;to&quot;:&quot;o:1;&quot;,&quot;delay&quot;:1500,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:3000,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;mask&quot;:&quot;x:0;y:0;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]">
 
-
-                    <li data-index="rs-1" data-transition="zoomout">
-
-                        <img src="{{ Storage::url($banner->image) }}" alt class="rev-slidebg" />
-                        <div class="tp-caption tp-shape tp-shapewrapper tp-resizeme ipad-hidden rs-parallaxlevel-1"
-                            data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" data-paddingright="[0,0,0,0]"
-                            data-paddingtop="[0,0,0,0]" data-responsive_offset="on" data-type="shape" data-height="auto"
-                            data-whitespace="nowrap" data-width="none" data-hoffset="['110','110','110','110']"
-                            data-voffset="['110','90','90','90']" data-x="['right','right','right','right']"
-                            data-y="['bottom','bottom','bottom','bottom']"
-                            data-frames="[{&quot;from&quot;:&quot;x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;speed&quot;:1500,&quot;to&quot;:&quot;o:1;&quot;,&quot;delay&quot;:1000,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1000,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;mask&quot;:&quot;x:0;y:0;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]">
-
-
-                            <!-- <i class="float-icon"><img src="./images/image.png" alt=""></i> -->
-
-                        </div>
-                        <div class="tp-caption tp-resizeme rs-parallaxlevel-1 ipad-hidden" data-paddingbottom="[0,0,0,0]"
-                            data-paddingleft="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]"
-                            data-responsive_offset="on" data-type="shape" data-height="none" data-whitespace="nowrap"
-                            data-width="none" data-hoffset="['0','0','0','0']" data-voffset="['110','90','90','90']"
-                            data-x="['right','right','right','right']" data-y="['bottom','bottom','bottom','bottom']"
-                            data-frames="[{&quot;from&quot;:&quot;y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;speed&quot;:1500,&quot;to&quot;:&quot;o:1;&quot;,&quot;delay&quot;:1500,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:3000,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;mask&quot;:&quot;x:0;y:0;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]">
-
-                        </div>
-                        <div class="tp-caption" data-paddingbottom="[0,0,0,0]" data-paddingleft="[15,15,15,15]"
-                            data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on"
-                            data-type="text" data-height="none" data-width="['750','750','750','650']"
-                            data-whitespace="normal" data-hoffset="['0','0','0','0']"
-                            data-voffset="['-195','-160','-160','-140']" data-x="['left','left','left','left']"
-                            data-y="['middle','middle','middle','middle']" data-textalign="['top','top','top','top']"
-                            data-frames="[{&quot;delay&quot;:1000,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]">
-                            <span class="title">Nhanh chóng & tận tâm</span>
-                        </div>
-                        <div class="tp-caption" data-paddingbottom="[0,0,0,0]" data-paddingleft="[15,15,15,15]"
-                            data-paddingright="[15,15,15,15]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on"
-                            data-type="text" data-height="none" data-width="['750','750','750','650']"
-                            data-whitespace="normal" data-hoffset="['0','0','0','0']"
-                            data-voffset="['-70','-40','-40','-30']" data-x="['left','left','left','left']"
-                            data-y="['middle','middle','middle','middle']" data-textalign="['top','top','top','top']"
-                            data-frames="[{&quot;delay&quot;:1000,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]">
-                            <h2>Đặt hàng online <br />Giao hàng miễn phí</h2>
-                        </div>
-                        <div class="tp-caption" data-paddingbottom="[0,0,0,0]" data-paddingleft="[15,15,15,15]"
-                            data-paddingright="[15,15,15,15]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on"
-                            data-type="text" data-height="none" data-width="['700','750','700','450']"
-                            data-whitespace="normal" data-hoffset="['0','0','0','0']"
-                            data-voffset="['100','120','120','120']" data-x="['left','left','left','left']"
-                            data-y="['middle','middle','middle','middle']" data-textalign="['top','top','top','top']"
-                            data-frames="[{&quot;delay&quot;:1000,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]">
-                            <a href="{{ $banner->image_url }}" class="theme-btn btn-style-one hvr-light"><span class="btn-title">Tìm
-                                    hiểu thêm</span></a>
-                        </div>
-                    </li>
+                            </div>
+                            <div class="tp-caption" data-paddingbottom="[0,0,0,0]" data-paddingleft="[15,15,15,15]"
+                                data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on"
+                                data-type="text" data-height="none" data-width="['750','750','750','650']"
+                                data-whitespace="normal" data-hoffset="['0','0','0','0']"
+                                data-voffset="['-195','-160','-160','-140']" data-x="['left','left','left','left']"
+                                data-y="['middle','middle','middle','middle']" data-textalign="['top','top','top','top']"
+                                data-frames="[{&quot;delay&quot;:1000,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]">
+                                <span class="title">Nhanh chóng & tận tâm</span>
+                            </div>
+                            <div class="tp-caption" data-paddingbottom="[0,0,0,0]" data-paddingleft="[15,15,15,15]"
+                                data-paddingright="[15,15,15,15]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on"
+                                data-type="text" data-height="none" data-width="['750','750','750','650']"
+                                data-whitespace="normal" data-hoffset="['0','0','0','0']"
+                                data-voffset="['-70','-40','-40','-30']" data-x="['left','left','left','left']"
+                                data-y="['middle','middle','middle','middle']" data-textalign="['top','top','top','top']"
+                                data-frames="[{&quot;delay&quot;:1000,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]">
+                                <h2>Đặt hàng online <br />Giao hàng miễn phí</h2>
+                            </div>
+                            <div class="tp-caption" data-paddingbottom="[0,0,0,0]" data-paddingleft="[15,15,15,15]"
+                                data-paddingright="[15,15,15,15]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on"
+                                data-type="text" data-height="none" data-width="['700','750','700','450']"
+                                data-whitespace="normal" data-hoffset="['0','0','0','0']"
+                                data-voffset="['100','120','120','120']" data-x="['left','left','left','left']"
+                                data-y="['middle','middle','middle','middle']" data-textalign="['top','top','top','top']"
+                                data-frames="[{&quot;delay&quot;:1000,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]">
+                                <a href="{{ $banner->image_url }}" class="theme-btn btn-style-one hvr-light"><span
+                                        class="btn-title">Tìm
+                                        hiểu thêm</span></a>
+                            </div>
+                        </li>
                     @endforeach
                 </ul>
             </div>
@@ -95,7 +92,12 @@
                         <div class="sec-title">
                             <span class="sub-title">Giới thiệu</span>
                             <h2>Trà ngon - Tận hưởng từng khoảnh khắc</h2>
-                            <div class="text"> "Chào mừng bạn đến với SabujCha, nơi mang đến những tách trà tinh tế, đậm đà hương vị thiên nhiên. Chúng tôi tự hào cung cấp đa dạng các loại trà chất lượng cao, từ trà xanh thanh mát, trà đen truyền thống đến các dòng trà thảo mộc thơm ngon, tốt cho sức khỏe. Với cam kết về nguồn gốc tự nhiên và quy trình sản xuất an toàn, [Tên shop] không chỉ mang lại hương vị tuyệt vời mà còn giúp bạn thư giãn và chăm sóc sức khỏe mỗi ngày. Trải nghiệm ngay hôm nay để tận hưởng từng khoảnh khắc trà!</div>
+                            <div class="text"> "Chào mừng bạn đến với SabujCha, nơi mang đến những tách trà tinh tế, đậm
+                                đà hương vị thiên nhiên. Chúng tôi tự hào cung cấp đa dạng các loại trà chất lượng cao, từ
+                                trà xanh thanh mát, trà đen truyền thống đến các dòng trà thảo mộc thơm ngon, tốt cho sức
+                                khỏe. Với cam kết về nguồn gốc tự nhiên và quy trình sản xuất an toàn, [Tên shop] không chỉ
+                                mang lại hương vị tuyệt vời mà còn giúp bạn thư giãn và chăm sóc sức khỏe mỗi ngày. Trải
+                                nghiệm ngay hôm nay để tận hưởng từng khoảnh khắc trà!</div>
                         </div>
                         <div class="content-box">
                             <div class="about-block">
@@ -137,7 +139,7 @@
 
 
 
-    <section  class="services-section">
+    <section class="services-section">
         <div class="bg-image" style="background-image: url(images/background/1.jpg)"></div>
         <div class="anim-icons">
             <span class="icon icon-wave-line"></span>
@@ -160,10 +162,13 @@
                                     </a>
                                 </div>
                                 <div class="content ">
-                                    <h4><a href="{{ route('products.detail', ['id' => $item->id]) }}">{{ $item->product_name }}</a></h4>
+                                    <h4><a
+                                            href="{{ route('products.detail', ['id' => $item->id]) }}">{{ $item->product_name }}</a>
+                                    </h4>
                                     <span class="price">{{ number_format($item->regular_price, 0, ',', '.') }}₫</span>
                                 </div>
-                                <a href="{{ route('products.detail', ['id' => $item->id]) }}" class="theme-btn btn-style-one mb-2 small">
+                                <a href="{{ route('products.detail', ['id' => $item->id]) }}"
+                                    class="theme-btn btn-style-one mb-2 small">
                                     <span class="btn-title">Mua ngay</span>
                                 </a>
                                 <div class="icon-box">
@@ -232,7 +237,8 @@
                 <div class="sec-title light mb-0">
                     <div class="sub-title">Liên hệ với chúng tôi bất cứ lúc nào</div>
                     <h1>Sản phẩm độc đáo <br />của chúng tôi</h1>
-                    <a href="https://youtu.be/prIcP_Jrx7o" class="theme-btn btn-style-one hvr-light"><span class="btn-title">Xem
+                    <a href="https://youtu.be/prIcP_Jrx7o" class="theme-btn btn-style-one hvr-light"><span
+                            class="btn-title">Xem
                             video</span></a>
                 </div>
             </div>
@@ -302,7 +308,8 @@
                             <div class="sec-title light">
                                 <span class="sub-title" style="color: black">SabujCha</span>
                                 <h2 style="color: black">Nghệ thuật trà, hòa quyện cảm xúc!</h2>
-                                <div class="text" style="color: black"> SabujCha luôn cam kết mang đến trải nghiệm mua sắm tuyệt vời nhất cho
+                                <div class="text" style="color: black"> SabujCha luôn cam kết mang đến trải nghiệm mua
+                                    sắm tuyệt vời nhất cho
                                     khách hàng. Chúng tôi không ngừng nỗ lực để cung cấp dịch vụ chất lượng và giao hàng
                                     đúng hẹn, giúp khách hàng yên tâm tận hưởng sản phẩm mình yêu thích. Sự hài lòng của quý
                                     khách luôn là ưu tiên hàng đầu của chúng tôi. .</div>
@@ -502,7 +509,13 @@
                             <h2>"Amata – Tinh chất Trà Shan Tuyết cổ thụ"</h2>
                             <h4>Thú thưởng trà xưa và nay của người Việt
                             </h4>
-                            <div class="text">Amata là dòng trà đặc biệt, mang đến sự mát lành và ngọt ngào với tác dụng chữa lành và thải độc cơ thể. Được khai thác từ những vùng nguyên liệu đậm đà, dồi dào nội chất, Amata chứa đựng những tinh túy quý giá của trà Shan tuyết cổ thụ – loại cây linh khí của đất trời. Qua quá trình chiết xuất cẩn trọng và tỉ mỉ, mỗi giọt trà đều lưu giữ trọn vẹn hương vị đặc trưng và tinh túy nhất. Khi nhấp một ngụm Amata, bạn sẽ như cảm nhận được hương đồng gió nội hòa quyện cùng mùi vị núi rừng, đưa tâm hồn trở về với thiên nhiên hoang sơ, hùng vĩ.</div>
+                            <div class="text">Amata là dòng trà đặc biệt, mang đến sự mát lành và ngọt ngào với tác dụng
+                                chữa lành và thải độc cơ thể. Được khai thác từ những vùng nguyên liệu đậm đà, dồi dào nội
+                                chất, Amata chứa đựng những tinh túy quý giá của trà Shan tuyết cổ thụ – loại cây linh khí
+                                của đất trời. Qua quá trình chiết xuất cẩn trọng và tỉ mỉ, mỗi giọt trà đều lưu giữ trọn vẹn
+                                hương vị đặc trưng và tinh túy nhất. Khi nhấp một ngụm Amata, bạn sẽ như cảm nhận được hương
+                                đồng gió nội hòa quyện cùng mùi vị núi rừng, đưa tâm hồn trở về với thiên nhiên hoang sơ,
+                                hùng vĩ.</div>
                         </div>
                         <div class="row">
 
@@ -638,7 +651,7 @@
                     <div class="inner-box">
                         <div class="image-box">
                             <figure class="image">
-                                <a href="news-details.html"><img src="images/tt1.png" alt /></a>
+                                <a href="{{ url('/blog-detail') }}"><img src="images/tt1.png" alt /></a>
                             </figure>
                             <span class="date"><b>28</b> SEP</span>
                         </div>
@@ -650,7 +663,8 @@
                             <span>Trà như Bách Thái Nhân Sinh
                                 Trà như thơ: có uyển chuyển hàm xúc, có phóng khoáng ngang tàng; trà cũng như thư pháp:..
                             </span>
-                            <a href="news-details.html" class="read-more">Read More <i class="fa fa-angle-right"></i></a>
+                            <a href="{{ url('/blog-detail') }}" class="read-more">Read More <i
+                                    class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -659,7 +673,7 @@
                     <div class="inner-box">
                         <div class="image-box">
                             <figure class="image">
-                                <a href="news-details.html"><img src="images/tt2.jpg" alt /></a>
+                                <a href="{{ url('/blog-detail') }}"><img src="images/tt2.jpg" alt /></a>
                             </figure>
                             <span class="date"><b>28</b> SEP</span>
                         </div>
@@ -668,9 +682,12 @@
                                 <li><i class="fa fa-user"></i> by Admin</li>
                                 <li><i class="fa fa-comments"></i> 2 Comments</li>
                             </ul>
-                            <span class="title"><a href="news-details.html">Mùa xuân – mùa khởi đầu của vạn vật, của đất trời, cây cối sau quãng thời gian dài “ngủ đông” được đánh thức bằng không khí se se lạnh bao phủ đất trời và sự ẩm ướt của riêng mùa xuân.
+                            <span class="title"><a href="{{ url('/blog-detail') }}">Mùa xuân – mùa khởi đầu của vạn vật,
+                                    của đất trời, cây cối sau quãng thời gian dài “ngủ đông” được đánh thức bằng không khí
+                                    se se lạnh bao phủ đất trời và sự ẩm ướt của riêng mùa xuân.
                                 </a></span>
-                            <a href="news-details.html" class="read-more">Read More <i class="fa fa-angle-right"></i></a>
+                            <a href="{{ url('/blog-detail') }}" class="read-more">Read More <i
+                                    class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -679,7 +696,7 @@
                     <div class="inner-box">
                         <div class="image-box">
                             <figure class="image">
-                                <a href="news-details.html"><img src="images/tt4.jpg" alt /></a>
+                                <a href="{{ url('/blog-detail') }}"><img src="images/tt4.jpg" alt /></a>
                             </figure>
                             <span class="date"><b>28</b> SEP</span>
                         </div>
@@ -688,9 +705,12 @@
                                 <li><i class="fa fa-user"></i> by Admin</li>
                                 <li><i class="fa fa-comments"></i> 2 Comments</li>
                             </ul>
-                            <span class="title"><a href="news-details.html">Bạch Trà – loại trà sống ở trên núi cao, tránh xa hồng trần thì vị càng ngọt, hương thơm như hương rừng, sạch trong như nước suối đầu non.</a>
+                            <span class="title"><a href="{{ url('/blog-detail') }}">Bạch Trà – loại trà sống ở trên núi
+                                    cao, tránh xa hồng trần thì vị càng ngọt, hương thơm như hương rừng, sạch trong như nước
+                                    suối đầu non.</a>
                             </span>
-                            <a href="news-details.html" class="read-more">Read More <i class="fa fa-angle-right"></i></a>
+                            <a href="{{ url('/blog-detail') }}" class="read-more">Read More <i
+                                    class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
                 </div>
