@@ -75,4 +75,9 @@ class Product extends Model
 
         return $san_phams;
     }
+
+    public function review()
+    {
+        return $this->hasMany(Review::class);
+    }
 }

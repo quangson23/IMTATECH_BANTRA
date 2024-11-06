@@ -71,7 +71,8 @@
                         <div class="product-details__quantity">
                             <h3 class="product-details__quantity-title">Số lượng</h3>
                             <div class="pro-qty">
-                                <input type="number" id="quantityInput" value="1" name="quantity" min="1" max="{{$product->quantity}}">
+                                <input type="number" id="quantityInput" value="1" name="quantity" min="1"
+                                    max="{{ $product->quantity }}">
                             </div>
                             <input type="hidden" name="product_id" value="{{ $product->id }}">
                         </div>
@@ -80,11 +81,6 @@
                             <button type="submit" class="theme-btn btn-style-one">Thêm vào giỏ hàng</button>
                         </div>
                     </form>
-
-
-
-
-
 
                     <div class="product-details__social">
                         <div class="title">
@@ -149,106 +145,70 @@
                         <div class="tab" id="tab-2">
                             <div class="customer-comment">
                                 <div class="row clearfix">
-                                    <div class="col-lg-6 col-md-6 col-sm-12 comment-column">
-                                        <div class="single-comment-box">
-                                            <div class="inner-box">
-                                                <figure class="comment-thumb"><img src="images/resource/testi-thumb-1.jpg"
-                                                        alt></figure>
-                                                <div class="inner">
-                                                    <ul class="rating clearfix">
-                                                        <li><i class="fas fa-star"></i></li>
-                                                        <li><i class="fas fa-star"></i></li>
-                                                        <li><i class="fas fa-star"></i></li>
-                                                        <li><i class="fas fa-star"></i></li>
-                                                        <li><i class="fas fa-star"></i></li>
-                                                    </ul>
-                                                    <h5>Jon D. William, <span>20 Sep, 2022 . 4:00 pm</span></h5>
-                                                    <p>Aliquam hendrerit a augue insuscipit. Etiam aliquam massa quis des
-                                                        mauris commodo.</p>
+                                    @foreach ($product->review as $comment)
+                                        <div class="col-lg-6 col-md-6 col-sm-12 comment-column" style="margin-bottom: 24px">
+                                            <div class="single-comment-box">
+                                                <div class="inner-box">
+                                                    <figure class="comment-thumb"><img
+                                                            src="images/resource/testi-thumb-1.jpg" alt></figure>
+                                                    <div class="inner">
+                                                        <ul class="rating clearfix">
+                                                            @for ($i = 1; $i <= 5; $i++)
+                                                                <li>
+                                                                    <i
+                                                                        class="fas fa-star{{ $i <= $comment->star ? '' : '-o' }}"></i>
+                                                                </li>
+                                                            @endfor
+                                                        </ul>
+                                                        <h5>{{ $comment->user->name }},
+                                                            <span>{{ $comment->created_at->format('d/m/Y H:i') }}</span>
+                                                        </h5>
+                                                        <p>{{ $comment->content }}</p>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 comment-column">
-                                        <div class="single-comment-box">
-                                            <div class="inner-box">
-                                                <figure class="comment-thumb"><img src="images/resource/testi-thumb-2.jpg"
-                                                        alt></figure>
-                                                <div class="inner">
-                                                    <ul class="rating clearfix">
-                                                        <li><i class="fas fa-star"></i></li>
-                                                        <li><i class="fas fa-star"></i></li>
-                                                        <li><i class="fas fa-star"></i></li>
-                                                        <li><i class="fas fa-star"></i></li>
-                                                        <li><i class="fas fa-star"></i></li>
-                                                    </ul>
-                                                    <h5>Aleesha Brown, <span>22 Sep, 2022 . 8:00 pm</span></h5>
-                                                    <p>Aliquam hendrerit a augue insuscipit. Etiam aliquam massa quis des
-                                                        mauris commodo.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
-                            <div class="comment-box">
-                                <h3>Add Your Comments</h3>
-                                <form id="contact_form" name="contact_form" class
-                                    action="https://html.kodesolution.com/2024/meato-html/includes/sendmail.php"
-                                    method="post">
-                                    <div class="mb-3">
-                                        <textarea name="form_message" class="form-control required" rows="7" placeholder="Enter Message"></textarea>
+                        </div>
+
+                        <div class="comment-box">
+                            <h3>Add Your Comments</h3>
+                            <form id="commentForm" action="{{ route('store', ['id' => $product->id]) }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="product_id" value="{{ $product->id }}">
+
+                                <div class="mb-3">
+                                    <textarea name="content" class="form-control" rows="7" placeholder="Enter Comment"></textarea>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 column">
+                                    <div class="review-box clearfix">
+                                        <p>Your Review</p>
+                                        <ul class="rating clearfix" id="starRating">
+                                            <li data-value="1"><i class="far fa-star"></i></li>
+                                            <li data-value="2"><i class="far fa-star"></i></li>
+                                            <li data-value="3"><i class="far fa-star"></i></li>
+                                            <li data-value="4"><i class="far fa-star"></i></li>
+                                            <li data-value="5"><i class="far fa-star"></i></li>
+                                        </ul>
+                                        <input type="hidden" name="star" id="rating" value="0">
+                                        <span style="margin-left: 10px" class="error-star text-danger"></span>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <div class="mb-3">
-                                                <input name="form_name" class="form-control" type="text"
-                                                    placeholder="Enter Name">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="mb-3">
-                                                <input name="form_email" class="form-control required email"
-                                                    type="email" placeholder="Enter Email">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 column">
-                                        <div class="review-box clearfix">
-                                            <p>Your Review</p>
-                                            <ul class="rating clearfix">
-                                                <li><i class="far fa-star"></i></li>
-                                                <li><i class="far fa-star"></i></li>
-                                                <li><i class="far fa-star"></i></li>
-                                                <li><i class="far fa-star"></i></li>
-                                                <li><i class="far fa-star"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 column">
-                                        <div class="form-group clearfix">
-                                            <div class="custom-controls-stacked">
-                                                <label class="custom-control material-checkbox">
-                                                    <input type="checkbox" class="material-control-input">
-                                                    <span class="material-control-indicator"></span>
-                                                    <span class="description">Save my name, email, and website in this
-                                                        browser for the next time I comment.</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <input name="form_botcheck" class="form-control" type="hidden" value />
-                                        <button type="submit" class="theme-btn btn-style-one"
-                                            data-loading-text="Please wait..."><span class="btn-title">Submit
-                                                Comment</span></button>
-                                    </div>
-                                </form>
-                            </div>
+
+
+
+                                </div>
+                                <button type="submit" class="theme-btn btn-style-one"
+                                    data-loading-text="Please wait...">
+                                    <span class="btn-title">Submit Comment</span>
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 
@@ -278,22 +238,15 @@
                                                     class="price">{{ number_format($item->regular_price, 0, ',', '.') }}₫</span>
                                             </div>
 
+                                            <form action="{{ route('cart.add') }}" method="POST">
+                                                @csrf
+                                                <input type="hidden" name="quantity" value="1">
+                                                <input type="hidden" name="product_id" value="{{ $item->id }}">
 
-<form action="{{route('cart.add')}}" method="POST">
-@csrf
-<input type="hidden" name="quantity" value="1">
-<input type="hidden" name="product_id" value="{{$item->id}}">
+                                                <button class="theme-btn btn-style-one mb-2 small">Mua ngay</button>
+                                                {{-- <span class="btn-title">Mua ngay</span> --}}
 
-<button class="theme-btn btn-style-one mb-2 small">Mua ngay</button>
-    {{-- <span class="btn-title">Mua ngay</span> --}}
-
-</form>
-
-
-
-
-
-
+                                            </form>
 
                                             <div class="icon-box">
                                                 <a href="shop-product-details.html" class="ui-btn like-btn">
@@ -313,6 +266,10 @@
             </div>
         </div>
     </section>
+
+    <style>
+
+    </style>
 
     <script>
         $('.pro-qty').prepend('<span class="dec qtybtn">-</span>');
@@ -334,6 +291,59 @@
                 alert('Số lượng phải lớn hơn 1');
                 $(this).val(1);
             }
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const starRating = document.getElementById('starRating');
+            const ratingInput = document.getElementById('rating');
+
+            // Lắng nghe sự kiện click trên các ngôi sao
+            starRating.addEventListener('click', function(event) {
+                if (event.target.tagName === 'I' || event.target.tagName === 'LI') {
+                    const starValue = event.target.closest('li').dataset.value;
+                    ratingInput.value = starValue;
+
+                    // Đặt màu sao đã chọn
+                    Array.from(starRating.children).forEach(star => {
+                        const value = star.dataset.value;
+                        star.innerHTML =
+                            `<i class="${value <= starValue ? 'fas' : 'far'} fa-star"></i>`;
+                    });
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('commentForm');
+            const starRating = document.querySelectorAll('#starRating li');
+            const hiddenStarInput = document.getElementById('rating');
+            const errorMessage = document.querySelector('.error-star');
+
+            // Xử lý khi người dùng chọn sao
+            starRating.forEach((star) => {
+                star.addEventListener('click', function() {
+                    hiddenStarInput.value = this.getAttribute('data-value');
+                    starRating.forEach((s) => s.classList.remove('selected'));
+                    this.classList.add('selected');
+                });
+            });
+
+            // Submit form
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Kiểm tra xem người dùng đã chọn sao chưa
+                if (hiddenStarInput.value === "0") {
+                    errorMessage.textContent = "Vui lòng chọn sao cho bình luận.";
+                } else {
+                    errorMessage.textContent = ""; // Xóa thông báo lỗi
+
+                    // Gửi form qua AJAX hoặc thông qua submit bình thường
+                    form.submit();
+                }
+            });
         });
     </script>
 @endsection

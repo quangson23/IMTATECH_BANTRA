@@ -17,6 +17,7 @@ use App\Http\Controllers\Client\ProductController as ClientProductController;
 use App\Http\Controllers\Client\ShopController;
 use App\Http\Controllers\OkController;
 use App\Http\Controllers\PdfController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\TestController;
 use App\Http\Middleware\CheckRoleAdminMiddleware;
 use Illuminate\Support\Facades\Route;
@@ -50,8 +51,10 @@ Route::get('shop', function () {
     return view('client.pages.shop');
     ['auth', 'auth.admin'];
 });
-Route::get('/', [ShopController::class, 'index']);
-// Route::get('/', [HomeController::class, 'index'])->middleware('auth');
+
+Route::post('/products/{id}/review', [ReviewController::class, 'store'])->name('store');
+
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('blog-detail', function () {
     return view('client.pages.blog-detail');

@@ -82,13 +82,12 @@
                 <div class="nav-outer">
                     <nav class="nav main-menu">
                         <ul class="navigation">
-
-
-                            </li>
+                            {{-- <li>
+                                <a href="/">Trang chủ</a>
+                            </li> --}}
 
                             <li>
                                 <a href="/shop">Cửa hàng</a>
-
                             </li>
 
                             <li class="dropdown">
