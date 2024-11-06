@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BaiVietController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CouponController;
@@ -10,6 +11,7 @@ use App\Http\Controllers\Admin\PromotionController;
 use App\Http\Controllers\Admin\StaffController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Client\BaiVietController as ClientBaiVietController;
 use App\Http\Controllers\Client\CartController;
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\Client\OrderController;
@@ -36,10 +38,13 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::resource('banner', BannerController::class);
-
+Route::resource('bai-viet', BaiVietController::class);
+Route::get('/blog', [ClientBaiVietController::class, 'index'])->name('blog.index');
+Route::get('/blog/{id}', [ClientBaiVietController::class, 'show'])->name('blog-detail'); // Detail view of a single blog post
 // Route::get('client', function () {
 //     return view('client.index');
 // });
+
 
 
 Route::get('admin', [DashboardController::class, 'index'])
@@ -59,9 +64,7 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('blog-detail', function () {
     return view('client.pages.blog-detail');
 });
-Route::get('blog', function () {
-    return view('client.pages.blog');
-});
+
 
 Route::get('khoahoctra', function () {
     return view('client.pages.khoahoctra');

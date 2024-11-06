@@ -112,8 +112,11 @@
                                 </ul> --}}
                             </li>
 
-                            <li>
-                                <a href="/blog">Tin tức</a>
+
+
+                            <li >
+                                <a href="{{ route('blog.index') }}">Tin tức</a>
+
 
                             </li>
                             <li><a href="/contac">Liên hệ</a></li>
