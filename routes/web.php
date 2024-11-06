@@ -46,11 +46,12 @@ Route::get('admin', [DashboardController::class, 'index'])
 
 // ->middleware(CheckRoleAdminMiddleware::class)
 
-// Route::get('shop', function () {
-//     return view('client.pages.shop');['auth', 'auth.admin']
-// });
-Route::get('shop', [ShopController::class, 'index']);
-Route::get('/', [HomeController::class, 'index'])->middleware('auth');
+Route::get('shop', function () {
+    return view('client.pages.shop');
+    ['auth', 'auth.admin'];
+});
+Route::get('/', [ShopController::class, 'index']);
+// Route::get('/', [HomeController::class, 'index'])->middleware('auth');
 
 Route::get('blog-detail', function () {
     return view('client.pages.blog-detail');
@@ -151,7 +152,6 @@ Route::middleware('auth')->prefix('orders')
         Route::delete('/destroy/{id}', [AdminOrderController::class, 'destroy'])->name('destroy');
 
         Route::get('/print/{id}', [AdminOrderController::class, 'printInvoice'])->name('print');
-
     });
 
 // Route::get('loginadmin', [AuthController::class, 'showFormLoginAdmin']);
@@ -161,5 +161,3 @@ Route::post('login', [AuthController::class, 'login'])->name('login');
 Route::get('register', [AuthController::class, 'showFormRegister']);
 Route::post('register', [AuthController::class, 'register'])->name('register');
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
-
-
