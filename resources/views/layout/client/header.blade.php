@@ -106,7 +106,8 @@
                             </li>
 
                             <li >
-                                <a href="/blog">Tin tức</a>
+                                <a href="{{ route('blog.index') }}">Tin tức</a>
+
 
                             </li>
                             <li><a href="/contac">Liên hệ</a></li>
