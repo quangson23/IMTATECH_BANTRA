@@ -24,20 +24,20 @@
                             <h3 class="blog-details__title">Video hướng dẫn pha trà</h3>
                             <div class="video-gallery">
                                 <div class="video-item">
-                                    <a href="https://www.youtube.com/watch?v=your_video_1" target="_blank">
+                                    <a href="https://youtu.be/ExtFskrOHUQ?si=FUpEasWvPQSvm6Df" target="_blank">
                                         <img src="https://img.youtube.com/vi/your_video_1/0.jpg"
                                             alt="How to Brew Green Tea">
                                         <h4>How to Brew Green Tea</h4>
                                     </a>
                                 </div>
                                 <div class="video-item">
-                                    <a href="https://www.youtube.com/watch?v=your_video_2" target="_blank">
+                                    <a href="https://youtu.be/vtdLAHE-Vgo?si=gLYc9tBkHM1IfcJF" target="_blank">
                                         <img src="https://img.youtube.com/vi/your_video_2/0.jpg" alt="Making Herbal Tea">
                                         <h4>Making Herbal Tea</h4>
                                     </a>
                                 </div>
                                 <div class="video-item">
-                                    <a href="https://www.youtube.com/watch?v=your_video_3" target="_blank">
+                                    <a href="https://youtu.be/ULlV7bmM8lA?si=hXGBKPXxu8gHVtPK" target="_blank">
                                         <img src="https://img.youtube.com/vi/your_video_3/0.jpg" alt="Perfecting Black Tea">
                                         <h4>Perfecting Black Tea</h4>
                                     </a>
@@ -171,8 +171,8 @@
                 </div>
                 <div class="col-xl-4 col-lg-5">
 
-                        <div class="sidebar__single sidebar__search">
-                            <h3 class="blog-details__title">Đăng ký học viên</h3>
+                    <div class="sidebar__single sidebar__search">
+                        <h3 class="blog-details__title">Đăng ký học viên</h3>
 
                         <div class="sidebar__single sidebar__post">
                             <h3 class="sidebar__title">Register for a Course</h3>
@@ -183,7 +183,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input type="email" id="email" name="email" required placeholder="Email (*)" />
+                                    <input type="email" id="email" name="email" required
+                                        placeholder="Email (*)" />
                                 </div>
                                 <div class="form-group">
                                     <label for="course">Khóa học</label>
@@ -195,7 +196,8 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <button class="theme-btn btn-style-one p-2" type="submit" class="btn">Gửi thông tin</button>
+                                    <button class="theme-btn btn-style-one p-2" type="submit" class="btn">Gửi thông
+                                        tin</button>
                                 </div>
                             </form>
                         </div>
@@ -205,19 +207,24 @@
                                 display: flex;
                                 flex-direction: column;
                             }
+
                             .form-group {
                                 margin-bottom: 15px;
                             }
+
                             label {
                                 margin-bottom: 5px;
                                 font-weight: bold;
                             }
-                            input, select {
+
+                            input,
+                            select {
                                 padding: 8px;
                                 border: 1px solid #ccc;
                                 border-radius: 4px;
                                 width: 100%;
                             }
+
                             .btn {
                                 padding: 10px;
                                 background-color: #007bff;
@@ -226,6 +233,7 @@
                                 border-radius: 4px;
                                 cursor: pointer;
                             }
+
                             .btn:hover {
                                 background-color: #0056b3;
                             }

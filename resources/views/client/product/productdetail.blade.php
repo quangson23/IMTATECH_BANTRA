@@ -293,7 +293,7 @@
             }
         });
     </script>
-
+    .
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const starRating = document.getElementById('starRating');
