@@ -23,6 +23,7 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\TestController;
 use App\Http\Middleware\CheckRoleAdminMiddleware;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,9 +53,10 @@ Route::get('admin', [DashboardController::class, 'index'])
 
 // ->middleware(CheckRoleAdminMiddleware::class)
 
-Route::get('shop', function () {
-    return view('client.pages.shop');
-    ['auth', 'auth.admin'];
+Route::get('shop', function (Request $request) {
+    $category_id = $request->category_id;
+    return view('client.pages.shop',compact('category_id'));
+
 });
 
 Route::post('/products/{id}/review', [ReviewController::class, 'store'])->name('store');

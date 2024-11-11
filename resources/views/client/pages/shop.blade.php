@@ -37,12 +37,12 @@
                                 </ul>
                             @endforeach --}}
                             @foreach ($categories as $index => $item)
-    <ul class="category-list clearfix">
-        <li>
-            <a href="{{ url('shop?category_id=' . $item->id) }}">{{ $item->categories_name }}</a>
-        </li>
-    </ul>
-@endforeach
+                                <ul class="category-list clearfix">
+                                    <li>
+                                        <a href="{{ url('shop?category_id=' . $item->id) }}">{{ $item->categories_name }}</a>
+                                    </li>
+                                </ul>
+                            @endforeach
 
                         </div>
                     </div>
@@ -97,31 +97,62 @@
                         </ul>
                     </div>
                     <div class="filter-list row">
+                      
                         @foreach ($products as $index => $item)
-                        <div class="product-block all mix transport cargo col-lg-4 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image">
-                                    <a href="{{ route('products.detail', ['id' => $item->id]) }}">
-                                        <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->product_name }}" style="width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
-                                    </a>
+                            @if($category_id)
+                                @if($item->category_id == $category_id)
+                                    <div class="product-block all mix transport cargo col-lg-4 col-md-6 col-sm-12">
+                                        <div class="inner-box">
+                                            <div class="image">
+                                                <a href="{{ route('products.detail', ['id' => $item->id]) }}">
+                                                    <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->product_name }}" style="width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
+                                                </a>
+                                            </div>
+                                            <div class="content">
+                                                <h4><a href="{{ route('products.detail', ['id' => $item->id]) }}">{{ $item->product_name }}</a></h4>
+                                                <span class="price">{{ number_format($item->regular_price, 0, ',', '.') }}₫</span>
+                                            </div>
+                                            <a href="{{ route('products.detail', ['id' => $item->id]) }}" class="theme-btn btn-style-one mb-2 small">
+                                                <span class="btn-title">Mua ngay</span>
+                                            </a>
+                                            <div class="icon-box">
+                                                <a href="shop-product-details.html" class="ui-btn like-btn">
+                                                    <i class="fa fa-heart"></i>
+                                                </a>
+                                                <a href="shop-cart.html" class="ui-btn add-to-cart">
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+                            @else
+                                <div class="product-block all mix transport cargo col-lg-4 col-md-6 col-sm-12">
+                                    <div class="inner-box">
+                                        <div class="image">
+                                            <a href="{{ route('products.detail', ['id' => $item->id]) }}">
+                                                <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->product_name }}" style="width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
+                                            </a>
+                                        </div>
+                                        <div class="content">
+                                            <h4><a href="{{ route('products.detail', ['id' => $item->id]) }}">{{ $item->product_name }}</a></h4>
+                                            <span class="price">{{ number_format($item->regular_price, 0, ',', '.') }}₫</span>
+                                        </div>
+                                        <a href="{{ route('products.detail', ['id' => $item->id]) }}" class="theme-btn btn-style-one mb-2 small">
+                                            <span class="btn-title">Mua ngay</span>
+                                        </a>
+                                        <div class="icon-box">
+                                            <a href="shop-product-details.html" class="ui-btn like-btn">
+                                                <i class="fa fa-heart"></i>
+                                            </a>
+                                            <a href="shop-cart.html" class="ui-btn add-to-cart">
+                                                <i class="fa fa-shopping-cart"></i>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="content">
-                                    <h4><a href="{{ route('products.detail', ['id' => $item->id]) }}">{{ $item->product_name }}</a></h4>
-                                    <span class="price">{{ number_format($item->regular_price, 0, ',', '.') }}₫</span>
-                                </div>
-                                <a href="{{ route('products.detail', ['id' => $item->id]) }}" class="theme-btn btn-style-one mb-2 small">
-                                    <span class="btn-title">Mua ngay</span>
-                                </a>
-                                <div class="icon-box">
-                                    <a href="shop-product-details.html" class="ui-btn like-btn">
-                                        <i class="fa fa-heart"></i>
-                                    </a>
-                                    <a href="shop-cart.html" class="ui-btn add-to-cart">
-                                        <i class="fa fa-shopping-cart"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                            @endif
+                    
                         @endforeach
                     </div>
                 </div>
