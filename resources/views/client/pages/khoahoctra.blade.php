@@ -3,7 +3,7 @@
     <section class="page-title" style="background-image: url(images/bannerpage.jpg)">
         <div class="auto-container">
             <div class="title-outer">
-                <h1 class="title">News Details</h1>
+                <h1 class="title">Khóa học trà</h1>
                 <ul class="page-breadcrumb">
                     <li><a href="index-2.html">Home</a></li>
                     <li>News</li>
@@ -25,20 +25,22 @@
                             <div class="video-gallery">
                                 <div class="video-item">
                                     <a href="https://youtu.be/ExtFskrOHUQ?si=FUpEasWvPQSvm6Df" target="_blank">
-                                        <img src="https://img.youtube.com/vi/your_video_1/0.jpg"
+                                        <img src="{{ asset('./images/clients/How to Brew Green Tea.jpg') }}"
                                             alt="How to Brew Green Tea">
                                         <h4>How to Brew Green Tea</h4>
                                     </a>
                                 </div>
                                 <div class="video-item">
                                     <a href="https://youtu.be/vtdLAHE-Vgo?si=gLYc9tBkHM1IfcJF" target="_blank">
-                                        <img src="https://img.youtube.com/vi/your_video_2/0.jpg" alt="Making Herbal Tea">
+                                        <img src="{{ asset('./images/clients/0Making Herbal Tea.jpg') }}"
+                                            alt="Making Herbal Tea">
                                         <h4>Making Herbal Tea</h4>
                                     </a>
                                 </div>
                                 <div class="video-item">
                                     <a href="https://youtu.be/ULlV7bmM8lA?si=hXGBKPXxu8gHVtPK" target="_blank">
-                                        <img src="https://img.youtube.com/vi/your_video_3/0.jpg" alt="Perfecting Black Tea">
+                                        <img src="{{ asset('./images/clients/Perfecting Black Tea.jpg') }}"
+                                            alt="Perfecting Black Tea">
                                         <h4>Perfecting Black Tea</h4>
                                     </a>
                                 </div>
@@ -176,28 +178,49 @@
 
                         <div class="sidebar__single sidebar__post">
                             <h3 class="sidebar__title">Register for a Course</h3>
-                            <form action="/submit-registration" method="POST" class="course-registration-form">
+
+                            @if (session('success'))
+                                <div class="alert alert-success" role="alert">
+                                    {{ session('success') }}
+                                </div>
+                            @endif
+
+                            <form action="{{ route('store') }}" method="POST" class="course-registration-form">
+                                @csrf
                                 <div class="form-group">
                                     <label for="name">Họ và tên</label>
-                                    <input type="text" id="name" name="name" required placeholder="Họ tên (*)" />
+                                    <input type="text" id="name" name="name" placeholder="Họ tên (*)"
+                                        value="{{ Auth::check() ? Auth::user()->name : old('name') }}">
+                                    @error('name')
+                                        <span class="alert">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input type="email" id="email" name="email" required
-                                        placeholder="Email (*)" />
+                                    <input type="email" id="email" name="email" placeholder="Email (*)"
+                                        value="{{ Auth::check() ? Auth::user()->email : old('email') }}" />
+                                    @error('email')
+                                        <span class="alert">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="course">Khóa học</label>
-                                    <select id="course" name="course" required>
+                                    <select id="course" name="course">
                                         <option value="">Chọn khóa học</option>
-                                        <option value="tea-brewing">Kiến thức sơ cấp</option>
-                                        <option value="herbal-tea">Pha trà</option>
-                                        <option value="black-tea">Bảo quản trà</option>
+                                        <option value="Kiến thức sơ cấp"
+                                            {{ old('course') == 'Kiến thức sơ cấp' ? 'selected' : '' }}>Kiến thức sơ cấp
+                                        </option>
+                                        <option value="Pha trà" {{ old('course') == 'Pha trà' ? 'selected' : '' }}>Pha trà
+                                        </option>
+                                        <option value="Bảo quản trà"
+                                            {{ old('course') == 'Bảo quản trà' ? 'selected' : '' }}>Bảo quản trà</option>
                                     </select>
+                                    @error('course')
+                                        <span class="alert">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
-                                    <button class="theme-btn btn-style-one p-2" type="submit" class="btn">Gửi thông
-                                        tin</button>
+                                    <button class="theme-btn btn-style-one p-2" type="submit">Gửi thông tin</button>
                                 </div>
                             </form>
                         </div>

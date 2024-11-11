@@ -102,7 +102,7 @@
                                 </ul>
                             </li>
 
-                            <li class="dropdown">
+                            <li>
                                 <a href="/khoahoctra">Khóa học trà</a>
                                 {{-- <ul>
                                 @foreach ($promotions as $index => $item)
@@ -114,7 +114,7 @@
 
 
 
-                            <li >
+                            <li>
                                 <a href="{{ route('blog.index') }}">Tin tức</a>
 
 

@@ -51,9 +51,10 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    
 
-    public function order(){
+
+    public function order()
+    {
         return $this->hasMany(Order::class);
     }
 
@@ -82,10 +83,13 @@ class User extends Authenticatable
 
     public function updateUser($data, $id)
     {
-       DB::table('users')
-        ->where('id', $id)
-        ->update($data);
+        DB::table('users')
+            ->where('id', $id)
+            ->update($data);
     }
 
-
+    public function students()
+    {
+        return $this->hasMany(Students::class);
+    }
 }

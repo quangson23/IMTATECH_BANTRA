@@ -20,6 +20,7 @@ use App\Http\Controllers\Client\ShopController;
 use App\Http\Controllers\OkController;
 use App\Http\Controllers\PdfController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\StudentsController;
 use App\Http\Controllers\TestController;
 use App\Http\Middleware\CheckRoleAdminMiddleware;
 use Illuminate\Support\Facades\Route;
@@ -55,8 +56,7 @@ Route::get('admin', [DashboardController::class, 'index'])
 
 Route::get('shop', function (Request $request) {
     $category_id = $request->category_id;
-    return view('client.pages.shop',compact('category_id'));
-
+    return view('client.pages.shop', compact('category_id'));
 });
 
 Route::post('/products/{id}/review', [ReviewController::class, 'store'])->name('store');
@@ -71,6 +71,9 @@ Route::get('blog-detail', function () {
 Route::get('khoahoctra', function () {
     return view('client.pages.khoahoctra');
 });
+
+// Route đăng ký học viên
+Route::post('/khoahoctra/register', [StudentsController::class, 'store'])->name('store');
 
 Route::get('about', function () {
     return view('client.pages.about');
