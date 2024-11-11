@@ -314,11 +314,10 @@
 
                 <li class="dropdown">
                     <a href="" class="menu-toggle nav-link has-dropdown"><i data-feather="tag"></i><span>Bài
-                            đăng</span></a>
+                            viết</span></a>
                     <ul class="dropdown-menu">
-                        <li><a class="nav-link" href="#">Chuyên mục</a></li>
-                        <li><a class="nav-link" href=" # ">Danh sách bài đăng</a></li>
-
+                        <li><a class="nav-link" href=" {{ route('bai-viet.index') }} ">Danh sách bài viết</a></li>
+                        <li><a class="nav-link" href=" {{ route('bai-viet.create') }} ">Thêm bài viết</a></li>
                     </ul>
                 </li>
 
